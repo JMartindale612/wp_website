@@ -68,17 +68,15 @@ title: News
 					  </header>
 					</section>
 				  
-					<div class="inner">		
+					<div class="inner post-list">
 						{% for post in site.posts %}
-						  <article class="post">
-							<h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-							<p class="date">{{ post.date | date: "%-d %B %Y" }}</p>
-							<p>{{ post.excerpt }}</p>
-							<p><a class="button" href="{{ post.url | relative_url }}">Read more</a></p>
-						  </article>
+						  <h3 class="post-list__item">
+							<a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+							<span class="date">— {{ post.date | date: "%-d %B %Y" }}</span>
+						  </h3>
 						  <hr>
 						{% endfor %}
-					</div>
+					  </div>
 				  </section>
 				
 				<!-- Footer -->
