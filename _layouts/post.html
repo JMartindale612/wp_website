@@ -1,38 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>{{ page.title }} · {{ site.title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- your existing CSS file(s) -->
-    <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   </head>
+
   <body class="is-preload">
     <div id="page-wrapper">
 
       <!-- Header -->
-				<header id="header">
-					<h1 class="logo">
-						<a href="index.html">
-						</a>
-					</h1>
-					<nav id="nav">
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li>
-								<a href="#" class="icon solid fa-angle-down">About</a>
-								<ul>
-									<li><a href="project.html">Project</a></li>
-									<li><a href="people.html">People</a></li>
-									<li><a href="contact.html">Contact</a></li>
-								</ul>
-							</li>
-							<li><a href="news/">News</a></li>
-						</ul>
-					</nav>
-				</header>
+      <header id="header">
+        <h1 class="logo">
+          <a href="{{ '/index.html' | relative_url }}">
+            <img src="{{ '/images/wp_logo_new_close.jpg' | relative_url }}" alt="Weaponised Pasts" />
+          </a>
+        </h1>
+        <nav id="nav">
+          <ul>
+            <li><a href="{{ '/index.html' | relative_url }}">Home</a></li>
+            <li>
+              <a href="#" class="icon solid fa-angle-down">About</a>
+              <ul>
+                <li><a href="{{ '/project.html' | relative_url }}">Project</a></li>
+                <li><a href="{{ '/people.html' | relative_url }}">People</a></li>
+                <li><a href="{{ '/contact.html' | relative_url }}">Contact</a></li>
+              </ul>
+            </li>
+            <li><a href="{{ '/news/' | relative_url }}">News</a></li>
+          </ul>
+        </nav>
+      </header>
 
       {% if page.hero_image %}
+      <!-- Optional hero banner pulled from front matter -->
       <section class="hero">
         <img class="hero__bg" src="{{ page.hero_image | relative_url }}" alt="" aria-hidden="true">
         <div class="hero__shade"></div>
@@ -44,6 +48,7 @@
       </section>
       {% endif %}
 
+      <!-- Main -->
       <section id="main" class="container">
         <article class="box">
           <p class="post-meta">{{ page.date | date: "%-d %B %Y" }}</p>
@@ -51,6 +56,7 @@
         </article>
       </section>
 
+      <!-- Footer -->
       <footer id="site-footer" class="brand-footer">
         <div class="footer-inner">
           <!-- Left column -->
@@ -60,41 +66,36 @@
               <a href="mailto:jmartind@ed.ac.uk">jmartind@ed.ac.uk</a>
             </p>
           </div>
-      
+
           <!-- Middle column -->
           <div class="footer-col follow">
             <p class="heading">Follow us!</p>
             <nav class="social">
-              <!-- Bluesky (file you provide) -->
               <a class="social-link" href="https://bsky.app/profile/weaponisedpasts.bsky.social" target="_blank" rel="noopener">
                 <span class="sr-only">Bluesky</span>
-                <img src="assets/icons/bluesky.svg" alt="" aria-hidden="true" />
+                <img src="{{ '/assets/icons/bluesky.svg' | relative_url }}" alt="" aria-hidden="true" />
               </a>
-      
-              <!-- X/Twitter (Font Awesome icon from the theme) -->
               <a class="social-link" href="https://x.com/WeaponisedPasts" target="_blank" rel="noopener" aria-label="X (Twitter)">
                 <span class="icon brands fa-twitter" aria-hidden="true"></span>
               </a>
-      
-              <!-- LinkedIn -->
               <a class="social-link" href="https://www.linkedin.com/company/108832533/" target="_blank" rel="noopener" aria-label="LinkedIn">
                 <span class="icon brands fa-linkedin-in" aria-hidden="true"></span>
               </a>
             </nav>
           </div>
-      
+
           <!-- Right column -->
           <div class="footer-col links">
             <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="project.html">Project</a></li>
-              <li><a href="people.html">People</a></li>
-              <li><a href="contact.html">Contact</a></li>
-              <li><a href="news/">News</a></li>
+              <li><a href="{{ '/index.html' | relative_url }}">Home</a></li>
+              <li><a href="{{ '/project.html' | relative_url }}">Project</a></li>
+              <li><a href="{{ '/people.html' | relative_url }}">People</a></li>
+              <li><a href="{{ '/contact.html' | relative_url }}">Contact</a></li>
+              <li><a href="{{ '/news/' | relative_url }}">News</a></li>
             </ul>
           </div>
         </div>
-      
+
         <div class="footer-meta">
           <p>© Weaponised Pasts. All rights reserved.</p>
         </div>
@@ -102,14 +103,13 @@
 
     </div>
 
-    <!-- your existing JS (if any) -->
-    <!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+    <!-- Theme JS -->
+    <script src="{{ '/assets/js/jquery.min.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/jquery.dropotron.min.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/jquery.scrollex.min.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/browser.min.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/breakpoints.min.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/util.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
   </body>
 </html>

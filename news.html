@@ -12,34 +12,39 @@ title: News
 		<title>Weaponised Pasts</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<base href="{{ site.baseurl }}/">
+	  
+		<!-- remove <base>; we’ll rely purely on relative_url so links work on both the project site and your future domain -->
 		<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-	</head>
+	  </head>
+	  
+
+
 	<body class="is-preload">
 		<div id="page-wrapper">
 
 			<!-- Header -->
-				<header id="header">
-					<h1 class="logo">
-						<a href="index.html">
-							<img src="{{ '/images/wp_logo_new_close.jpg' | relative_url }}" alt="">
-						</a>
-					</h1>
-					<nav id="nav">
-						<ul>
-							<li><a href="{{ '/index.html' | relative_url }}">Home</a>
-							<li>
-								<a href="#" class="icon solid fa-angle-down">About</a>
-								<ul>
-									<li><a href="{{ '/project.html' | relative_url }}">Project</a>
-									<li><a href="{{ '/people.html' | relative_url }}">People</a>
-									<li><a href="{{ '/contact.html' | relative_url }}">Contact</a>
-								</ul>
-							</li>
-							<li><a href="{{ '/news/' | relative_url }}">News</a></li>
-						</ul>
-					</nav>
-				</header>
+			<header id="header">
+				<h1 class="logo">
+				  <a href="{{ '/index.html' | relative_url }}">
+					<img src="{{ '/images/wp_logo_new_close.jpg' | relative_url }}" alt="">
+				  </a>
+				</h1>
+				<nav id="nav">
+				  <ul>
+					<li><a href="{{ '/index.html' | relative_url }}">Home</a></li>
+					<li>
+					  <a href="#" class="icon solid fa-angle-down">About</a>
+					  <ul>
+						<li><a href="{{ '/project.html' | relative_url }}">Project</a></li>
+						<li><a href="{{ '/people.html' | relative_url }}">People</a></li>
+						<li><a href="{{ '/contact.html' | relative_url }}">Contact</a></li>
+					  </ul>
+					</li>
+					<!-- fix the Liquid typo here -->
+					<li><a href="{{ '/news/' | relative_url }}">News</a></li>
+				  </ul>
+				</nav>
+			  </header>
 
 				<!-- Banner -->
 				<section class="hero">
@@ -141,13 +146,13 @@ title: News
 
 				
 				<!-- Scripts -->
-			<script src="{{ '/assets/js/jquery.min.js' | relative_url }}"></script>
-			<script src="{{ '/assets/js/jquery.dropotron.min.js' | relative_url }}"></script>
-			<script src="{{ '/assets/js/jquery.scrollex.min.js' | relative_url }}"></script>
-			<script src="{{ '/assets/js/browser.min.js' | relative_url }}"></script>
-			<script src="{{ '/assets/js/breakpoints.min.js' | relative_url }}"></script>
-			<script src="{{ '/assets/js/util.js' | relative_url }}"></script>
-			<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+				<script src="{{ '/assets/js/jquery.min.js' | relative_url }}"></script>
+				<script src="{{ '/assets/js/jquery.dropotron.min.js' | relative_url }}"></script>
+				<script src="{{ '/assets/js/jquery.scrollex.min.js' | relative_url }}"></script>
+				<script src="{{ '/assets/js/browser.min.js' | relative_url }}"></script>
+				<script src="{{ '/assets/js/breakpoints.min.js' | relative_url }}"></script>
+				<script src="{{ '/assets/js/util.js' | relative_url }}"></script>
+				<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 
 	</body>
 </html>
