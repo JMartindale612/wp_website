@@ -2095,9 +2095,9 @@
 
 /* ============== Branding ============== */
 
-$brand-black: #121411;    /* 18/20/17 */
-$brand-cream: #F9EFE5;    /* 249/239/229 */
-$brand-red:   #933222;    /* 147/ 50/ 34 */
+$brand-black: #171B14;    /* 23, 27, 20 */
+$brand-cream: #F2E9DA;    /* 242, 233, 218 */
+$brand-red:   #942811;    /* 148, 40, 17 */
 $brand-grey:  #3E4D55;    /*  62/ 77/ 85 */  /* <-- semicolon fixed */
 
 /* alias to match earlier references */
@@ -2393,19 +2393,180 @@ $brand-red: #933222;
   /* Reduce vertical spacing when stacking sections */
 .container.compact { padding-top: 0.75rem; padding-bottom: 0.75rem; }
 
-
-/* Blur the banner background via CSS */
-#banner{
+/* ===== Blurred hero banner (Alpha-style) ===== */
+#banner.banner--blur {
 	position: relative;
-	overflow: hidden;
+	min-height: 48vh;                  /* tweak height */
+	display: grid;                     /* center the text */
+	place-items: center;
+	text-align: center;
+	padding: 6rem 1.5rem;              /* breathing room for small screens */
+	overflow: hidden;                  /* hide blur edges */
   }
-  #banner::before{
+  
+  /* blurred background */
+  #banner.banner--blur::before{
+	background-image: url("../../images/places/boudica_cropped.jpg"); /* or rename - see below */
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	filter: blur(10px);
+	transform: scale(1.06);
+  }
+  
+
+  /* optional subtle tint to boost legibility (brand red at ~18%) */
+  #banner.banner--blur::after {
 	content: "";
 	position: absolute; inset: 0;
-	background-image: url("images/banner_sharp.jpg");
-	background-position: center; background-size: cover; background-repeat: no-repeat;
-	filter: blur(8px);
-	transform: scale(1.07);   /* hide blur-edge clipping */
+	background: linear-gradient(
+	  rgba(147, 50, 34, 0.18),
+	  rgba(147, 50, 34, 0.18)
+	);
 	z-index: 0;
   }
-  #banner > *{ position: relative; z-index: 1; }  /* keep text sharp above blur */
+  
+  /* keep text above the blur */
+  #banner.banner--blur .inner {
+	position: relative;
+	z-index: 1;
+  }
+  
+  /* make banner text look like Alpha */
+  #banner.banner--blur h2 {
+	font-size: clamp(2rem, 5vw, 4rem);
+	font-weight: 300;
+	line-height: 1.1;
+	color: #fff;
+	margin: 0 0 .5rem 0;
+  }
+  #banner.banner--blur p {
+	font-size: clamp(1rem, 2.4vw, 1.35rem);
+	color: rgba(255,255,255,.95);
+	margin: 0;
+  }
+
+  .home   #banner.banner--blur::before { background-image: url("../../images/places/boudica-cropped.jpg"); }
+.people #banner.banner--blur::before { background-image: url("../../images/places/ortahisar.jpg"); }
+.project#banner.banner--blur::before { background-image: url("../../images/places/edinburgh_winter.jpg"); }
+/* If you keep space in the name, encode it: */
+.project-berlin #banner.banner--blur::before { background-image: url("../../images/places/berlin-wall.jpg"); }
+
+
+/* Blurred banner */
+#banner.banner--blur {
+	position: relative;
+	min-height: 48vh;
+	display: grid;
+	place-items: center;
+	text-align: center;
+	padding: 6rem 1.5rem;
+	overflow: hidden;
+  }
+  #banner.banner--blur::before{
+	content:"";
+	position:absolute; inset:0;
+	background-image: var(--banner-image);   /* ← read from HTML */
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	filter: blur(10px);
+	transform: scale(1.06);
+	z-index:0;
+  }
+  #banner.banner--blur::after{
+	content:"";
+	position:absolute; inset:0;
+	background: linear-gradient(rgba(147,50,34,.18), rgba(147,50,34,.18));
+	z-index:0;
+  }
+  #banner.banner--blur .inner{ position:relative; z-index:1; }
+
+
+
+  /* Full-width hero with blurred image background */
+.hero{
+	position: relative;
+	width: 100%;
+	min-height: 48vh;          /* adjust 40–65vh to taste */
+	display: grid;             /* center the text */
+	place-items: center;
+	text-align: center;
+	overflow: hidden;
+	padding: 6rem 1.5rem;      /* mobile breathing room */
+  }
+  
+  /* Background image layer */
+  .hero__bg{
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;         /* fills horizontally */
+	filter: blur(2px);        /* the “fuzzy” look */
+	transform: scale(1.03);    /* hide blur edge cropping */
+	z-index: 0;
+  }
+  
+  /* Optional red wash to improve contrast */
+  .hero__shade{
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(rgba(147,50,34,.18), rgba(147,50,34,.18));
+	z-index: 1;
+  }
+  
+  /* keep/force the title white */
+	.hero__content{
+	position: relative;
+	z-index: 2;
+	color: #fff;            /* makes paragraph white */
+  }
+  .hero__content h1{
+	color: #fff;            /* explicitly white (overrides theme) */
+	margin: 0 0 .5rem;
+	font-size: clamp(2rem, 5vw, 4rem);
+	font-weight: 300;
+	line-height: 1.1;
+  }
+  .hero__content p{
+	margin: 0;
+	font-size: clamp(1rem, 2.4vw, 1.35rem);
+  }
+
+  /* tighter container for sections that look too far apart */
+.container.compact{ padding-top: 1.25rem; padding-bottom: 1.25rem; }
+
+/* Brand tokens (adjust the cream to your exact header/brand background) */
+:root{
+	--brand-red: #933222;
+	--brand-cream: #F4E7DC; /* your light brand bg */
+  }
+  
+  .quote-card{
+	background: var(--brand-cream);
+	color: #111;                 /* black text */
+	border-radius: 12px;
+	padding: 1.25rem 1.5rem;
+	max-width: 820px;
+	margin: 1.75rem auto;
+	position: relative;
+	box-shadow: 0 1px 0 rgba(0,0,0,.06);
+  }
+  .quote-card blockquote{ margin:0; font-style: italic; line-height:1.55; }
+  .quote-card .source{ display:block; margin-top:.75rem; font-style:normal; opacity:.8; }
+  
+  /* big decorative marks stay brand red */
+  .quote-card::before,
+  .quote-card::after{
+	position:absolute;
+	font-size: clamp(3rem, 7vw, 5.5rem);
+	line-height:1;
+	color: var(--brand-red);
+	font-weight:700;
+	opacity:.9;
+	content:"";
+  }
+  .quote-card::before{ content:"“"; left:.5rem; top:-.4rem; }
+  .quote-card::after { content:"”"; right:.5rem; bottom:-.6rem; }
+  
