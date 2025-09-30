@@ -70,24 +70,19 @@ title: News
 					  </header>
 					</section>
 				  
-					<div class="posts">
-					  {% for post in site.posts %}
-						<section class="box">
-						  {% if post.hero_image %}
-							<span class="image featured">
-							  <a href="{{ post.url | relative_url }}">
-								<img src="{{ post.hero_image | relative_url }}" alt="">
-							  </a>
-							</span>
-						  {% endif %}
-						  <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-						  <p class="post-date">{{ post.date | date: "%-d %B %Y" }}</p>
-						  <p>{{ post.summary | default: post.excerpt | strip_html | truncate: 220 }}</p>
-						  <ul class="actions special">
-							<li><a class="button alt" href="{{ post.url | relative_url }}">Read more</a></li>
-						  </ul>
-						</section>
-					  {% endfor %}
+					<div class="inner">
+						<h2>News</h2>
+						<p>We will be providing regular updates on our progress…</p>
+					
+						{% for post in site.posts %}
+						  <article class="post">
+							<h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+							<p class="date">{{ post.date | date: "%-d %B %Y" }}</p>
+							<p>{{ post.excerpt }}</p>
+							<p><a class="button" href="{{ post.url | relative_url }}">Read more</a></p>
+						  </article>
+						  <hr>
+						{% endfor %}
 					</div>
 				  </section>
 				
