@@ -1,0 +1,47 @@
+---
+layout: base.njk
+title: News
+---
+
+{% block hero %}
+<section class="hero" aria-label="Page banner">
+  <img class="hero__bg" src="../images/wp_logo_new_close.jpg" alt="" aria-hidden="true" />
+  <div class="hero__shade"></div>
+  <div class="hero__content">
+    <h1>News</h1>
+  </div>
+</section>
+{% endblock %}
+
+{% block content %}
+<section id="main" class="container">
+  <section class="box special">
+    <header class="major">
+      <h4>We will be providing regular updates on our progress, and overviews of material that would be interesting for those who would like to follow our work.</h4>
+      <h5>See our latest updates below.</h5>
+    </header>
+  </section>
+
+  {# List posts tagged `posts` (reverse chronological) #}
+  {% set posts = collections.posts | reverse %}
+  <section class="box">
+    {% if posts.length == 0 %}
+      <p>No updates yet.</p>
+    {% else %}
+      <ul class="alt">
+        {% for post in posts %}
+          <li>
+            <h3 style="margin-bottom:.25rem">
+              <a href="{{ post.url }}">{{ post.data.title }}</a>
+            </h3>
+            <small>{{ post.date | readableDate }}</small>
+            {% if post.data.description %}
+              <p style="margin-top:.5rem">{{ post.data.description }}</p>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </section>
+</section>
+{% endblock %}

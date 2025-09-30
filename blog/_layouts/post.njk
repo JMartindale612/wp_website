@@ -1,0 +1,19 @@
+{% extends "base.njk" %}
+
+{% block hero %}
+<section class="hero" aria-label="Page banner">
+  <img class="hero__bg" src="../../images/wp_logo_new_close.jpg" alt="" aria-hidden="true" />
+  <div class="hero__shade"></div>
+  <div class="hero__content">
+    <h1>{{ title }}</h1>
+  </div>
+</section>
+{% endblock %}
+
+{% block content %}
+<article class="container box">
+  <p><small>{{ page.date | readableDate }}</small></p>
+  {{ content | safe }}
+  <p style="margin-top:2rem"><a href="../">← Back to all news</a></p>
+</article>
+{% endblock %}

@@ -1,20 +1,15 @@
 {
-  "name": "wp_website",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "wp-website",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:news": "eleventy --config=.eleventy.cjs",
+    "serve:news": "eleventy --serve --port=8081 --config=.eleventy.cjs"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JMartindale612/wp_website.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/JMartindale612/wp_website/issues"
-  },
-  "homepage": "https://github.com/JMartindale612/wp_website#readme"
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2"
+  }
 }
