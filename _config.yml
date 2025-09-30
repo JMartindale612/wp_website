@@ -2,7 +2,7 @@ title: Weaponised Pasts
 description: "Research project blog"
 
 url: "https://jmartindale612.github.io"
-baseurl: "wp/website/"
+baseurl: "wp_website/"
                    # If this is a *project* site (username.github.io/repo), set baseurl: "/repo"
 permalink: /news/:title/
 markdown: kramdown
