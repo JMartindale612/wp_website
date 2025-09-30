@@ -1,0 +1,18 @@
+title: Weaponised Pasts
+description: "Research project blog"
+url: ""            # leave blank for now (we’ll set the custom domain later)
+baseurl: ""        # "" for a custom domain or a user site (username.github.io). 
+                   # If this is a *project* site (username.github.io/repo), set baseurl: "/repo"
+permalink: /news/:title/
+markdown: kramdown
+timezone: Europe/London
+excerpt_separator: "<!-- more -->"
+
+# Keep your repo tidy on GH Pages builds:
+exclude:
+  - node_modules
+  - package.json
+  - package-lock.json
+  - .vscode
+  - README
+  - LICENSE

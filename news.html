@@ -1,3 +1,8 @@
+---
+permalink: /news/
+title: News
+---
+
 <!DOCTYPE HTML>
 <!--
 	Alpha by HTML5 UP
@@ -54,17 +59,40 @@
 				<!-- Main -->
 
 				<!-- Main - Header -->
+				<!-- Main -->
 				<section id="main" class="container">
-					<section id="main" class="container">
-						<section class="box special">
-							<header class="major">
-								<h4>We will be providing regular updates on our progress, and overviews of material that would be interesting for those who would like to follow our work.
-								</h4>
-								<h5>See our latest updates below.</h5>
-							</header>
+					<section class="box special">
+					<header class="major">
+						<h4>We will be providing regular updates on our progress, and overviews of material that would be interesting for those who would like to follow our work.</h4>
+						<h5>See our latest updates below.</h5>
+					</header>
+					</section>
+				
+					<div class="posts">
+					{% for post in site.posts %}
+						<section class="box">
+						{% if post.hero_image %}
+							<span class="image featured">
+							<a href="{{ post.url | relative_url }}">
+								<img src="{{ post.hero_image | relative_url }}" alt="">
+							</a>
+							</span>
+						{% endif %}
+				
+						<h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+						<p class="post-date">{{ post.date | date: "%-d %B %Y" }}</p>
+				
+						<p>{{ post.summary | default: post.excerpt | strip_html | truncate: 220 }}</p>
+				
+						<ul class="actions special">
+							<li><a class="button alt" href="{{ post.url | relative_url }}">Read more</a></li>
+						</ul>
 						</section>
-
-				<!-- Blogging infrastructure -->
+					{% endfor %}
+					</div>
+				</section>
+				
+				<!-- Footer -->
 
 				<footer id="site-footer" class="brand-footer">
 					<div class="footer-inner">

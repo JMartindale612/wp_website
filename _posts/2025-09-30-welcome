@@ -1,0 +1,15 @@
+---
+layout: post
+title: "Welcome to Weaponised Pasts"
+date: 2025-09-30
+hero_image: images/castle_facade.jpeg   # optional
+summary: "What we’ll publish here and how to follow along."  # optional (used on index)
+---
+
+This is written in **Markdown**. Add images like:
+
+Here is my intro paragraph. It will appear as the excerpt until the marker below.
+
+<!-- more -->
+
+This part shows only on the full post page.
