@@ -2484,16 +2484,16 @@ $brand-red: #933222;
 
 
 
-  /* Full-width hero with blurred image background */
+ /* ===== Full-width hero with blurred background image (no tint) ===== */
 .hero{
 	position: relative;
 	width: 100%;
-	min-height: 48vh;          /* adjust 40–65vh to taste */
-	display: grid;             /* center the text */
-	place-items: center;
+	min-height: 48vh;              /* adjust 40–65vh to taste */
+	display: grid;
+	place-items: center;           /* center the text */
 	text-align: center;
 	overflow: hidden;
-	padding: 6rem 1.5rem;      /* mobile breathing room */
+	padding: 6rem 1.5rem;          /* mobile breathing room */
   }
   
   /* Background image layer */
@@ -2502,28 +2502,23 @@ $brand-red: #933222;
 	inset: 0;
 	width: 100%;
 	height: 100%;
-	object-fit: cover;         /* fills horizontally */
-	filter: blur(2px);        /* the “fuzzy” look */
-	transform: scale(1.03);    /* hide blur edge cropping */
+	object-fit: cover;             /* fills horizontally */
+	filter: blur(2px);             /* subtle “fuzzy” look */
+	transform: scale(1.03);        /* hides blur edge cropping */
 	z-index: 0;
   }
   
-  /* Optional red wash to improve contrast */
-  .hero__shade{
-	position: absolute;
-	inset: 0;
-	background: linear-gradient(rgba(147,50,34,.18), rgba(147,50,34,.18));
-	z-index: 1;
-  }
+  /* If a tint element ever exists, neutralize it */
+  .hero__shade{ background: none !important; }
   
-  /* keep/force the title white */
-	.hero__content{
+  /* Text overlay (force white) */
+  .hero__content{
 	position: relative;
 	z-index: 2;
-	color: #fff;            /* makes paragraph white */
+	color: #fff;
   }
   .hero__content h1{
-	color: #fff;            /* explicitly white (overrides theme) */
+	color: #fff;
 	margin: 0 0 .5rem;
 	font-size: clamp(2rem, 5vw, 4rem);
 	font-weight: 300;
@@ -2569,4 +2564,237 @@ $brand-red: #933222;
   }
   .quote-card::before{ content:"“"; left:.5rem; top:-.4rem; }
   .quote-card::after { content:"”"; right:.5rem; bottom:-.6rem; }
+
+
+  /* ===== Header: same beige at every size/state ===== */
+:root { --brand-cream: #F4E7DC; } /* your header/beige */
+
+#header,
+#header.alt,
+#header.reveal {
+  background: var(--brand-cream) !important;
+  box-shadow: none;
+}
+@media screen and (max-width: 980px) {
+  #header { background: var(--brand-cream) !important; }
+}
+
+/* Remove the grey "pill" highlight on top-level nav items */
+#nav > ul > li > a:hover,
+#nav > ul > li.active > a,
+#nav > ul > li:focus-within > a {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Keep dropdown hover highlight as your red */
+.dropotron li:hover > a,
+.dropotron li.active > a { background: #933222 !important; color:#fff !important; }
+
+/* Triangle pointer color for the first-level drop-down (optional) */
+.dropotron.level-0:before { border-bottom-color: #fff; }
+
+
+/* ===== Brand footer ===== */
+:root { --brand-red: #933222; }
+
+.brand-footer {
+  background: var(--brand-red);
+  color: #fff;
+  padding: 2rem 0;
+}
+.brand-footer .container {
+  max-width: 64rem;   /* matches your content width nicely */
+  margin: 0 auto;
+  text-align: center;
+}
+.brand-footer a { color: #fff; text-decoration: underline; }
+.brand-footer a:hover { text-decoration: none; opacity: .9; }
+
+.brand-footer .social {
+  display: flex; gap: .75rem; justify-content: center; align-items: center;
+  margin-top: .5rem;
+}
+.brand-footer .bsky img {
+  width: 28px; height: 28px; display: inline-block; filter: brightness(0) invert(1);
+}
+/* Screen-reader helper */
+.sr-only {
+  position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden;
+  clip:rect(0,0,0,0); white-space:nowrap; border:0;
+}
+
+:root{
+	--brand-navy: #37464F; /* pick your exact navy */
+  }
   
+  /* Footer shell */
+  .brand-footer{
+	background: var(--brand-navy);
+	color: #fff;
+  }
+  .brand-footer a{ color:#fff; text-decoration: underline; }
+  .brand-footer a:hover{ text-decoration: none; opacity:.9; }
+  
+  /* Layout: 3 columns on desktop, stack on mobile */
+  .brand-footer .footer-inner{
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 2.5rem 1rem 2.75rem;
+	display: grid;
+	grid-template-columns: 1.2fr 1fr 1fr;
+	gap: 2rem;
+	align-items: start;
+  }
+  @media (max-width: 980px){
+	.brand-footer .footer-inner{
+	  grid-template-columns: 1fr;
+	  text-align: center;
+	  gap: 1.25rem;
+	}
+  }
+  
+  /* Contact copy */
+  .brand-footer .contact p{
+	margin: 0;
+	line-height: 1.6;
+  }
+  
+  /* Follow block */
+  .brand-footer .heading{
+	margin: 0 0 .5rem;
+	font-weight: 600;
+  }
+  .brand-footer .social{
+	display: inline-flex;
+	gap: .75rem;
+	align-items: center;
+  }
+  .brand-footer .icon{
+	display: inline-flex;
+	width: 32px;
+	height: 32px;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	text-decoration: none;
+	font-size: 20px;         /* FA icons */
+	line-height: 1;
+  }
+  
+  /* Links list */
+  .brand-footer .links ul{ list-style: none; padding: 0; margin: 0; }
+  .brand-footer .links li + li{ margin-top: .4rem; }
+  
+  /* ===== Full-width hero with normal (unblurred) background ===== */
+.hero{
+	position: relative;
+	width: 100%;
+	min-height: 48vh;              /* adjust 40–65vh to taste */
+	display: grid;
+	place-items: center;           /* centers the text */
+	text-align: center;
+	overflow: hidden;
+	padding: 6rem 1.5rem;          /* mobile breathing room */
+  }
+  
+  /* Background image layer (no blur, no tint) */
+  .hero__bg{
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;             /* fills horizontally */
+	filter: none;
+	transform: none;
+	z-index: 0;
+  }
+  
+  /* If you still have a tint element somewhere, neutralize it */
+  .hero__shade{ background: none !important; }
+  
+  /* Text overlay (white) */
+  .hero__content{
+	position: relative;
+	z-index: 2;
+	color: #fff;
+  }
+  .hero__content h1{
+	color: #fff;
+	margin: 0 0 .5rem;
+	font-size: clamp(2rem, 5vw, 4rem);
+	font-weight: 300;
+	line-height: 1.1;
+  }
+  .hero__content p{
+	margin: 0;
+	font-size: clamp(1rem, 2.4vw, 1.35rem);
+  }
+
+  /* Bluesky icon for HTML5 UP .icons list */
+.icons .icon.icon-bsky:before{
+	content: "";                   /* override the FA glyph */
+	display: inline-block;
+	width: 2em;                    /* matches theme sizing */
+	height: 2em;
+	line-height: 2em;
+	background: currentColor;      /* inherits white in your footer */
+	-webkit-mask: url("assets/icons/bluesky.svg") no-repeat center / contain;
+			mask: url("assets/icons/bluesky.svg") no-repeat center / contain;
+	font-family: initial;          /* ignore FA font for this one */
+  }
+
+/* Center the copyright/meta line */
+.brand-footer .footer-meta{
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	padding: .9rem 1rem 1.4rem;
+  }
+  .brand-footer .footer-meta p{ margin: 0; }
+
+  .brand-footer .social-link{
+	display:inline-flex; width:34px; height:34px;
+	align-items:center; justify-content:center;
+	color:#fff; text-decoration:none;
+  }
+  .brand-footer .social-link img{
+	width:28px; height:28px; display:block;
+	filter: brightness(0) invert(1); /* makes dark assets white */
+  }
+
+  /* ===== Hero (full-width background image, no blur/tint) ===== */
+.hero{
+	position: relative;
+	width: 100%;
+	min-height: 48vh;
+	display: grid;
+	place-items: center;
+	text-align: center;
+	overflow: hidden;
+	padding: 6rem 1.5rem;
+  }
+  .hero__bg{
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	filter: none;
+	transform: none;
+	z-index: 0;
+  }
+  /* remove optional tint if present */
+  .hero__shade{ display: none !important; }
+  .hero__content{
+	position: relative;
+	z-index: 2;
+	color: #fff;
+  }
+  .hero__content h1{
+	color: #fff;
+	margin: 0 0 .5rem;
+	font-size: clamp(2rem, 5vw, 4rem);
+	font-weight: 300;
+	line-height: 1.1;
+  }

@@ -1,0 +1,22 @@
+ Volume in drive C is Windows
+ Volume Serial Number is AC25-85BE
+
+ Directory of C:\Users\jmartind\OneDrive - University of Edinburgh\Documents\GitHub\wp_website
+
+30/09/2025  11:30    <DIR>          .
+25/09/2025  10:48    <DIR>          ..
+25/09/2025  11:48    <DIR>          .vscode
+30/09/2025  10:45    <DIR>          assets
+30/09/2025  11:14             5,546 contact.html
+29/09/2025  10:03            19,507 elements.html
+30/09/2025  10:35    <DIR>          images
+30/09/2025  11:14             5,904 index.html
+25/09/2025  10:42            21,225 index_photo.html
+24/09/2025  17:31            17,128 LICENSE.txt
+30/09/2025  11:14             4,293 news.html
+30/09/2025  11:27            11,573 people.html
+30/09/2025  11:30                 0 printit.txt
+30/09/2025  11:28             5,893 project.html
+24/09/2025  17:31             1,050 README.txt
+              10 File(s)         92,119 bytes
+               5 Dir(s)  356,481,163,264 bytes free
