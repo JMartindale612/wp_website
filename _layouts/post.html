@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page.title }} · {{ site.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- your existing CSS file(s) -->
+    <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+  </head>
+  <body class="is-preload">
+    <div id="page-wrapper">
+
+      <!-- Header -->
+				<header id="header">
+					<h1 class="logo">
+						<a href="index.html">
+						</a>
+					</h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li>
+								<a href="#" class="icon solid fa-angle-down">About</a>
+								<ul>
+									<li><a href="project.html">Project</a></li>
+									<li><a href="people.html">People</a></li>
+									<li><a href="contact.html">Contact</a></li>
+								</ul>
+							</li>
+							<li><a href="news.html">News</a></li>
+						</ul>
+					</nav>
+				</header>
+
+      {% if page.hero_image %}
+      <section class="hero">
+        <img class="hero__bg" src="{{ page.hero_image | relative_url }}" alt="" aria-hidden="true">
+        <div class="hero__shade"></div>
+        <div class="hero__content"><h1>{{ page.title }}</h1></div>
+      </section>
+      {% else %}
+      <section id="banner">
+        <h2>{{ page.title }}</h2>
+      </section>
+      {% endif %}
+
+      <section id="main" class="container">
+        <article class="box">
+          <p class="post-meta">{{ page.date | date: "%-d %B %Y" }}</p>
+          {{ content }}
+        </article>
+      </section>
+
+      <footer id="site-footer" class="brand-footer">
+        <div class="footer-inner">
+          <!-- Left column -->
+          <div class="footer-col contact">
+            <p>
+              If you have any comments or questions please get in touch with the project team at
+              <a href="mailto:jmartind@ed.ac.uk">jmartind@ed.ac.uk</a>
+            </p>
+          </div>
+      
+          <!-- Middle column -->
+          <div class="footer-col follow">
+            <p class="heading">Follow us!</p>
+            <nav class="social">
+              <!-- Bluesky (file you provide) -->
+              <a class="social-link" href="https://bsky.app/profile/weaponisedpasts.bsky.social" target="_blank" rel="noopener">
+                <span class="sr-only">Bluesky</span>
+                <img src="assets/icons/bluesky.svg" alt="" aria-hidden="true" />
+              </a>
+      
+              <!-- X/Twitter (Font Awesome icon from the theme) -->
+              <a class="social-link" href="https://x.com/WeaponisedPasts" target="_blank" rel="noopener" aria-label="X (Twitter)">
+                <span class="icon brands fa-twitter" aria-hidden="true"></span>
+              </a>
+      
+              <!-- LinkedIn -->
+              <a class="social-link" href="https://www.linkedin.com/company/108832533/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <span class="icon brands fa-linkedin-in" aria-hidden="true"></span>
+              </a>
+            </nav>
+          </div>
+      
+          <!-- Right column -->
+          <div class="footer-col links">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="project.html">Project</a></li>
+              <li><a href="people.html">People</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="news.html">News</a></li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="footer-meta">
+          <p>© Weaponised Pasts. All rights reserved.</p>
+        </div>
+      </footer>
+
+    </div>
+
+    <!-- your existing JS (if any) -->
+    <!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+  </body>
+</html>
