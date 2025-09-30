@@ -12,8 +12,6 @@ title: News
 		<title>Weaponised Pasts</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	  
-		<!-- remove <base>; we’ll rely purely on relative_url so links work on both the project site and your future domain -->
 		<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 	  </head>
 	  
@@ -70,10 +68,7 @@ title: News
 					  </header>
 					</section>
 				  
-					<div class="inner">
-						<h2>News</h2>
-						<p>We will be providing regular updates on our progress…</p>
-					
+					<div class="inner">		
 						{% for post in site.posts %}
 						  <article class="post">
 							<h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>

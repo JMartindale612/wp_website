@@ -13,19 +13,25 @@
   <div id="page-wrapper">
 
     <!-- Header / nav (copy the same markup you use on index.html) -->
+    <!-- Header -->
     <header id="header">
+      <h1 class="logo">
+        <a href="index.html">
+          <img src="images/wp_logo_new_close.jpg">
+        </a>
+      </h1>
       <nav id="nav">
         <ul>
-          <li><a href="{{ '/' | relative_url }}">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li>
-            <a href="{{ '/project.html' | relative_url }}">About</a>
+            <a href="#" class="icon solid fa-angle-down">About</a>
             <ul>
-              <li><a href="{{ '/project.html' | relative_url }}">Project</a></li>
-              <li><a href="{{ '/people.html'  | relative_url }}">People</a></li>
-              <li><a href="{{ '/contact.html' | relative_url }}">Contact</a></li>
+              <li><a href="project.html">Project</a></li>
+              <li><a href="people.html">People</a></li>
+              <li><a href="contact.html">Contact</a></li>
             </ul>
           </li>
-          <li><a href="{{ '/news.html' | relative_url }}">News</a></li>
+          <li><a href="news/">News</a></li>
         </ul>
       </nav>
     </header>
@@ -36,13 +42,60 @@
           <h2>{{ page.title }}</h2>
           <p class="date">{{ page.date | date: "%-d %B %Y" }}</p>
         </header>
+
         {{ content }}
+
       </div>
     </section>
 
-    <footer id="footer">
-      <!-- your existing footer markup -->
-    </footer>
+    <footer id="site-footer" class="brand-footer">
+					<div class="footer-inner">
+					  <!-- Left column -->
+					  <div class="footer-col contact">
+						<p>
+						  If you have any comments or questions please get in touch with the project team at
+						  <a href="mailto:jmartind@ed.ac.uk">jmartind@ed.ac.uk</a>
+						</p>
+					  </div>
+				  
+					  <!-- Middle column -->
+					  <div class="footer-col follow">
+						<p class="heading">Follow us!</p>
+						<nav class="social">
+						  <!-- Bluesky (file you provide) -->
+						  <a class="social-link" href="https://bsky.app/profile/weaponisedpasts.bsky.social" target="_blank" rel="noopener">
+							<span class="sr-only">Bluesky</span>
+							<img src="{{ '/assets/icons/bluesky.svg' | relative_url }}" alt="" aria-hidden="true" />
+						  </a>
+				  
+						  <!-- X/Twitter (Font Awesome icon from the theme) -->
+						  <a class="social-link" href="https://x.com/WeaponisedPasts" target="_blank" rel="noopener" aria-label="X (Twitter)">
+							<span class="icon brands fa-twitter" aria-hidden="true"></span>
+						  </a>
+				  
+						  <!-- LinkedIn -->
+						  <a class="social-link" href="https://www.linkedin.com/company/108832533/" target="_blank" rel="noopener" aria-label="LinkedIn">
+							<span class="icon brands fa-linkedin-in" aria-hidden="true"></span>
+						  </a>
+						</nav>
+					  </div>
+				  
+					  <!-- Right column -->
+					  <div class="footer-col links">
+						<ul>
+						  <li><a href="{{ '/index.html' | relative_url }}">Home</a></li>
+						  <li><a href="{{ '/project.html' | relative_url }}">Project</a></li>
+						  <li><a href="{{ '/people.html' | relative_url }}">People</a></li>
+						  <li><a href="{{ '/contact.html' | relative_url }}">Contact</a></li>
+						  <li><a href="{{ '/news/' | relative_url }}">News</a></li>
+						</ul>
+					  </div>
+					</div>
+				  
+					<div class="footer-meta">
+					  <p>© Weaponised Pasts. All rights reserved.</p>
+					</div>
+				  </footer>
 
   </div>
 
