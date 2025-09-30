@@ -1,7 +1,7 @@
 title: Weaponised Pasts
 description: "Research project blog"
-url: "/wp_website"            # leave blank for now (we’ll set the custom domain later)
-baseurl: "https://jmartindale612.github.io"        # "" for a custom domain or a user site (username.github.io). 
+url: "/wp_website"
+baseurl: "https://jmartindale612.github.io"
                    # If this is a *project* site (username.github.io/repo), set baseurl: "/repo"
 permalink: /news/:title/
 markdown: kramdown
