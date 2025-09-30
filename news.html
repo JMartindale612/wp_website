@@ -5,14 +5,15 @@ title: News
 
 <!DOCTYPE HTML>
 
-<base href="{{ site.baseurl }}/">
+
 
 <html>
 	<head>
 		<title>Weaponised Pasts</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}"> />
+		<base href="{{ site.baseurl }}/">
+		<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 	</head>
 	<body class="is-preload">
 		<div id="page-wrapper">
@@ -35,7 +36,7 @@ title: News
 									<li><a href="{{ '/contact.html' | relative_url }}">Contact</a>
 								</ul>
 							</li>
-							<li><a href="/news">News</a></li>
+							<li><a href="{{ '/news/ | relative_url }}">News</a></li>
 						</ul>
 					</nav>
 				</header>
@@ -43,7 +44,7 @@ title: News
 				<!-- Banner -->
 				<section class="hero">
 					<!-- Background image (blurred via CSS) -->
-					<img class="hero__bg" src="{{ 'images/cheddar_man-natural-history.jpg' | relative_url }}" alt="" aria-hidden="true">
+					<img class="hero__bg" src="{{ '/images/cheddar_man-natural-history.jpg' | relative_url }}" alt="" aria-hidden="true">
 				
 					<!-- Optional brand tint -->
 					<div class="hero__shade"></div>
@@ -104,7 +105,7 @@ title: News
 						  <!-- Bluesky (file you provide) -->
 						  <a class="social-link" href="https://bsky.app/profile/weaponisedpasts.bsky.social" target="_blank" rel="noopener">
 							<span class="sr-only">Bluesky</span>
-							<img src="{{ 'assets/icons/bluesky.svg' | relative_url }}" alt="" aria-hidden="true" />
+							<img src="{{ '/assets/icons/bluesky.svg' | relative_url }}" alt="" aria-hidden="true" />
 						  </a>
 				  
 						  <!-- X/Twitter (Font Awesome icon from the theme) -->
@@ -122,11 +123,11 @@ title: News
 					  <!-- Right column -->
 					  <div class="footer-col links">
 						<ul>
-						  <li><a href="{{ 'index.html' | relative_url }}">Home</a></li>
-						  <li><a href="{{ 'project.html' | relative_url }}">Project</a></li>
-						  <li><a href="{{ 'people.html' | relative_url }}">People</a></li>
-						  <li><a href="{{ 'contact.html' | relative_url }}">Contact</a></li>
-						  <li><a href="{{ 'news/' | relative_url }}">News</a></li>
+						  <li><a href="{{ '/index.html' | relative_url }}">Home</a></li>
+						  <li><a href="{{ '/project.html' | relative_url }}">Project</a></li>
+						  <li><a href="{{ '/people.html' | relative_url }}">People</a></li>
+						  <li><a href="{{ '/contact.html' | relative_url }}">Contact</a></li>
+						  <li><a href="{{ '/news/' | relative_url }}">News</a></li>
 						</ul>
 					  </div>
 					</div>
@@ -140,13 +141,13 @@ title: News
 
 				
 				<!-- Scripts -->
-			<script src="{{ 'assets/js/jquery.min.js' | relative_url }}"></script>
-			<script src="{{ 'assets/js/jquery.dropotron.min.js' | relative_url }}"></script>
-			<script src="{{ 'assets/js/jquery.scrollex.min.js' | relative_url }}"></script>
-			<script src="{{ 'assets/js/browser.min.js' | relative_url }}"></script>
-			<script src="{{ 'assets/js/breakpoints.min.js' | relative_url }}"></script>
-			<script src="{{ 'assets/js/util.js' | relative_url }}"></script>
-			<script src="{{ 'assets/js/main.js' | relative_url }}></script>
+			<script src="{{ '/assets/js/jquery.min.js' | relative_url }}"></script>
+			<script src="{{ '/assets/js/jquery.dropotron.min.js' | relative_url }}"></script>
+			<script src="{{ '/assets/js/jquery.scrollex.min.js' | relative_url }}"></script>
+			<script src="{{ '/assets/js/browser.min.js' | relative_url }}"></script>
+			<script src="{{ '/assets/js/breakpoints.min.js' | relative_url }}"></script>
+			<script src="{{ '/assets/js/util.js' | relative_url }}"></script>
+			<script src="{{ '/assets/js/main.js' | relative_url }}>"></script>
 
 	</body>
 </html>
