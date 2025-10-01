@@ -2930,3 +2930,61 @@ $brand-red: #933222;
 	  row-gap: 1rem;
 	}
   }
+
+
+
+
+  /* === Beige brand bar under the navy footer === */
+.brand-footer .footer-brandbar {
+	background: #efe5d8;   /* beige */
+	color: #111;           /* black text on beige */
+	margin-top: 0;
+	padding-top: 1.25rem;
+  }
+  
+  /* Remove any old divider line and lay out logos */
+  .brand-footer .footer-brandbar .footer-logos {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	align-items: center;
+	justify-items: center;
+	gap: 1.25rem;
+	padding: 0 1rem 0.5rem;
+	border-top: none !important;   /* kill previous border rule */
+  }
+  
+  /* Logo box ~3:1 and responsive */
+  .brand-footer .footer-brandbar .logo {
+	width: clamp(160px, 22vw, 260px);
+	aspect-ratio: 3 / 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  }
+  .brand-footer .footer-brandbar .logo img {
+	max-width: 100%;
+	max-height: 100%;
+	width: auto;
+	height: auto;
+	object-fit: contain;
+  }
+  
+  /* Copyright styling on beige */
+  .brand-footer .footer-brandbar .footer-meta {
+	text-align: center;
+	color: #111;
+	opacity: .85;
+	padding: 0.5rem 0 1.25rem;
+  }
+  
+  /* Stack logos on small screens */
+  @media (max-width: 720px) {
+	.brand-footer .footer-brandbar .footer-logos {
+	  grid-template-columns: 1fr;
+	  row-gap: 1rem;
+	}
+  }
+  
+  /* Safety: if an older rule adds a border on .footer-logos anywhere, neutralize it */
+  .brand-footer .footer-logos { border-top: none !important; }
+  
