@@ -4756,4 +4756,23 @@ body.landing .container > .box.special:first-child {
 .brand-footer .footer-logos {
   border-top: none !important;
 }
+
+/* Kill the navy strip under the beige brand bar */
+.brand-footer {
+  padding-bottom: 0 !important;
+  /* remove leftover navy area */
+}
+
+/* Keep the beige area’s own spacing */
+.brand-footer .footer-brandbar {
+  padding-bottom: 1.25rem;
+  margin-bottom: 0;
+}
+
+/* Make sure no divider line sneaks back in */
+.brand-footer .footer-logos,
+.brand-footer .footer-brandbar {
+  border-top: none !important;
+  border-bottom: none !important;
+}
 /*# sourceMappingURL=main.css.map */
