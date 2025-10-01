@@ -121,18 +121,13 @@
 				  <div class="footer-col follow">
 					<p class="heading">Follow us!</p>
 					<nav class="social">
-					  <!-- Bluesky (file you provide) -->
 					  <a class="social-link" href="https://bsky.app/profile/weaponisedpasts.bsky.social" target="_blank" rel="noopener">
 						<span class="sr-only">Bluesky</span>
-						<img src="assets/icons/bluesky.svg" alt="" aria-hidden="true" />
+						<img src="{{ '/assets/icons/bluesky.svg' | relative_url }}" alt="" aria-hidden="true" />
 					  </a>
-			  
-					  <!-- X/Twitter (Font Awesome icon from the theme) -->
 					  <a class="social-link" href="https://x.com/WeaponisedPasts" target="_blank" rel="noopener" aria-label="X (Twitter)">
 						<span class="icon brands fa-twitter" aria-hidden="true"></span>
 					  </a>
-			  
-					  <!-- LinkedIn -->
 					  <a class="social-link" href="https://www.linkedin.com/company/108832533/" target="_blank" rel="noopener" aria-label="LinkedIn">
 						<span class="icon brands fa-linkedin-in" aria-hidden="true"></span>
 					  </a>
@@ -142,16 +137,17 @@
 				  <!-- Right column -->
 				  <div class="footer-col links">
 					<ul>
-					  <li><a href="index.html">Home</a></li>
-					  <li><a href="project.html">Project</a></li>
-					  <li><a href="people.html">People</a></li>
-					  <li><a href="contact.html">Contact</a></li>
-					  <li><a href="news/">News</a></li>
+					  <li><a href="{{ '/index.html'   | relative_url }}">Home</a></li>
+					  <li><a href="{{ '/project.html' | relative_url }}">Project</a></li>
+					  <li><a href="{{ '/people.html'  | relative_url }}">People</a></li>
+					  <li><a href="{{ '/contact.html' | relative_url }}">Contact</a></li>
+					  <li><a href="{{ '/news/'        | relative_url }}">News</a></li>
 					</ul>
 				  </div>
 				</div>
-			
-				<!-- Beige brand bar: logos + copyright -->
+			  
+				<!-- Beige brand bar: logos -->
+				
 				<div class="footer-brandbar">
 					<div class="footer-logos">
 					<div class="footer-col logo">
@@ -164,12 +160,15 @@
 						<img src="images/transparent_leverhulme.png" alt="Leverhulme Trust" loading="lazy">
 					</div>
 					</div>
-				
-					<div class="footer-meta">
-					<p>© Weaponised Pasts. All rights reserved.</p>
-					</div>
+				</div>
+
+			  
+				<!-- Copyright sits OUTSIDE the beige bar -->
+				<div class="footer-meta">
+				  <p>© Weaponised Pasts. All rights reserved.</p>
 				</div>
 			  </footer>
+		  
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
