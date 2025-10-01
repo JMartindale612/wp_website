@@ -3006,3 +3006,15 @@ $brand-red: #933222;
 	border-bottom: none !important;
   }
   
+  .footer-logos {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	align-items: center;
+	gap: 2rem;
+  }
+  .footer-logos img {
+	height: 64px;      /* or 96px / 128px to taste */
+	width: auto;       /* keep aspect ratio */
+	display: block;
+	margin-inline: auto;
+  }
