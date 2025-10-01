@@ -4606,4 +4606,12 @@ body.landing .container > .box.special:first-child {
     width: clamp(160px, 60vw, 260px);
   }
 }
+
+/* Blog post images: centered & responsive */
+.post-page .content img {
+  display: block;
+  margin: 1.25rem auto;
+  max-width: 100%;
+  height: auto;
+}
 /*# sourceMappingURL=main.css.map */
