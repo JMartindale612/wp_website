@@ -3059,4 +3059,77 @@ $brand-red: #933222;
 	.brand-footer .logo--trento     { width: clamp(150px, 40vw, 220px); }
 	.brand-footer .logo--leverhulme { width: clamp(155px, 41vw, 230px); }
   }
-  
+
+  /* CONTACT FORM CARD */
+.box.form-card { padding: 2.25rem 2rem; }
+
+/* Two-column grid: label (left), input (right) */
+.form-grid {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  grid-column-gap: 1.25rem;
+  grid-row-gap: 1rem;
+  align-items: center;
+}
+
+/* h4 size labels everywhere */
+.form-grid h4 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Place label and control into the grid neatly */
+.form-grid .field { display: contents; } /* lets label + input occupy the two columns */
+
+/* Inputs */
+.form-grid input[type="text"],
+.form-grid input[type="email"],
+.form-grid textarea {
+  width: 100%;
+}
+
+/* “Message” label centred and textarea full width */
+.form-grid .field-message h4 {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-top: .5rem;
+}
+.form-grid .field-message textarea {
+  grid-column: 1 / -1;
+}
+
+/* Consent + actions take the full width */
+.form-grid .consent,
+.form-grid .actions { grid-column: 1 / -1; }
+
+/* Navy button, centered */
+.form-grid .actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: .5rem;
+}
+
+/* Update this colour to your exact “brand navy” if different */
+.btn-navy {
+  background: #33454D;
+  color: #fff;
+  border: 0;
+  padding: .9rem 2.25rem;
+  border-radius: .45rem;
+  font-size: 1.05rem;
+  letter-spacing: .02em;
+  cursor: pointer;
+}
+.btn-navy:hover { background: #2a3840; }
+
+/* Muted helper text */
+.muted { opacity: .7; }
+
+/* Hide honeypot (spam trap) accessibly */
+.hp { position: absolute !important; left: -50000px !important; width: 1px; height: 1px; opacity: 0; }
+
+/* Small status line */
+.status { margin: .5rem 0 0; font-size: .95rem; }

@@ -64,55 +64,56 @@
 						</header>
 					</section>
 				
-				<div class = "box">
-				  <!-- Contact form (Formspree) -->
-				  <form id="contact-form"
-						action="https://formspree.io/f/mldpnbpy"
-						method="POST" accept-charset="UTF-8" novalidate
-						class="contact-form">
-		  
-					<div class="row gtr-uniform">
-					  <div class="col-6 col-12-medium">
-						<label for="name">Name</label>
-						<input type="text" id="name" name="name" required autocomplete="name" />
-					  </div>
-		  
-					  <div class="col-6 col-12-medium">
-						<label for="email">Email</label>
-						<input type="email" id="email" nsame="email" required autocomplete="email" />
-					  </div>
-		  
-					  <div class="col-12">
-						<label for="organisation">Organisation (optional)</label>
-						<input type="text" id="organisation" name="organisation" autocomplete="organization" />
-					  </div>
-		  
-					  <div class="col-12">
-						<label for="message">Message</label>
-						<textarea id="message" name="message" rows="6" required></textarea>
-					  </div>
-		  
-					  <!-- GDPR-style consent (edit text as needed) -->
-					  <div class="col-12">
-						<label>
-						  <input type="checkbox" name="consent" required />
-						  I consent to the Weaponised Pasts team storing and using my details to respond to this enquiry.
-						</label>
-					  </div>
-		  
-					  <!-- Hidden helpers -->
-					  <input type="hidden" name="_subject" value="New message from Weaponised Pasts" />
-					  <!-- honeypot to deter bots -->
-					  <input type="text" name="_gotcha" class="hp" autocomplete="off" />
-					  <!-- record page source -->
-					  <input type="hidden" name="page" value="contact.html" />
-		  
-					  <div class="col-12">
-						<button type="submit" class="primary">Send</button>
-						<p id="form-status" role="status" aria-live="polite" style="margin-top:.75rem;"></p>
-					  </div>
-					</div>
-				  </form>
+					<section class="box form-card">
+						<form id="contact-form"
+							  action="https://formspree.io/f/mldpnbpy"
+							  method="POST" accept-charset="UTF-8"
+							  class="contact-form form-grid">
+					  
+						  <!-- Name -->
+						  <div class="field">
+							<h4><label for="name">Name</label></h4>
+							<input type="text" id="name" name="name" required autocomplete="name">
+						  </div>
+					  
+						  <!-- Email -->
+						  <div class="field">
+							<h4><label for="email">Email</label></h4>
+							<input type="email" id="email" name="email" required autocomplete="email">
+						  </div>
+					  
+						  <!-- Organisation -->
+						  <div class="field">
+							<h4><label for="organisation">Organisation <span class="muted">(optional)</span></label></h4>
+							<input type="text" id="organisation" name="organisation" autocomplete="organization">
+						  </div>
+					  
+						  <!-- Message (label centered, textarea full width) -->
+						  <div class="field field-message">
+							<h4><label for="message">Message</label></h4>
+							<textarea id="message" name="message" rows="7" required></textarea>
+						  </div>
+					  
+						  <!-- Consent -->
+						  <div class="consent">
+							<label>
+							  <input type="checkbox" name="consent" required>
+							  I consent to the Weaponised Pasts team storing and using my details to respond to this enquiry.
+							</label>
+						  </div>
+					  
+						  <!-- Helpers -->
+						  <input type="hidden" name="_subject" value="New message from Weaponised Pasts">
+						  <input type="text" name="_gotcha" class="hp" autocomplete="off">
+						  <input type="hidden" name="page" value="contact.html">
+					  
+						  <!-- Submit -->
+						  <div class="actions">
+							<button type="submit" class="btn-navy">Send</button>
+							<p id="form-status" role="status" aria-live="polite" class="status"></p>
+						  </div>
+						</form>
+					  </section>
 		  
 				  <style>
 					/* Hide honeypot */
@@ -124,37 +125,37 @@
 					.contact-form textarea{width:100%}
 				  </style>
 		  
-				  <script>
-					// Progressive enhancement: submit via fetch to keep user on the page
+				<script>
 					const form = document.getElementById('contact-form');
 					const statusEl = document.getElementById('form-status');
-		  
+				
 					form.addEventListener('submit', async (e) => {
-					  e.preventDefault();
-					  statusEl.textContent = 'Sending…';
-					  const data = new FormData(form);
-					  try {
+					e.preventDefault();
+					statusEl.textContent = 'Sending…';
+					try {
 						const resp = await fetch(form.action, {
-						  method: 'POST',
-						  body: data,
-						  headers: { 'Accept': 'application/json' }
+						method: 'POST',
+						body: new FormData(form),
+						headers: { 'Accept': 'application/json' }
 						});
 						if (resp.ok) {
-						  statusEl.textContent = 'Thanks — your message was sent.';
-						  form.reset();
+						statusEl.textContent = 'Thanks — your message was sent.';
+						form.reset();
 						} else {
-						  const j = await resp.json().catch(() => ({}));
-						  statusEl.textContent =
-							j.errors ? j.errors.map(err => err.message).join(', ')
-									 : 'Sorry, something went wrong. Please try again or email jmartind@ed.ac.uk.';
+						const j = await resp.json().catch(() => ({}));
+						statusEl.textContent = j.errors
+							? j.errors.map(err => err.message).join(', ')
+							: 'Sorry, something went wrong. Please try again or email jmartind@ed.ac.uk.';
 						}
-					  } catch (err) {
+					} catch {
 						statusEl.textContent = 'Network error — please try again or email jmartind@ed.ac.uk.';
-					  }
+					}
 					});
-				  </script>
+				</script>
 		  
 				</div>
+
+			</section>
 
 				<section id="cta">
 					<h2>Sign up for project updates</h2>
@@ -177,7 +178,7 @@
 					</form>
 				  </section>
 				  
-			  </section>
+			  
 
 			<!-- Footer -->
 			<footer id="site-footer" class="brand-footer">
