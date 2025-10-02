@@ -1,281 +1,259 @@
 <!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
-  <head>
-    <title>Weaponised Pasts</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-  </head>
-  <body class="is-preload">
-    <div id="page-wrapper">
+	<head>
+		<title>Weaponised Pasts</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
 
-      <!-- Header -->
-      <header id="header">
-        <h1 class="logo">
-          <a href="index.html">
-            <img src="images/wp_logo_new_close.jpg" alt="Weaponised Pasts logo">
-          </a>
-        </h1>
-        <nav id="nav">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li>
-              <a href="#" class="icon solid fa-angle-down">About</a>
-              <ul>
-                <li><a href="project.html">Project</a></li>
-                <li><a href="people.html">People</a></li>
-                <li><a href="contact.html">Contact</a></li>
-              </ul>
-            </li>
-            <li><a href="news/">News</a></li>
-          </ul>
-        </nav>
-      </header>
+			<!-- Header -->
+				<header id="header">
+					<h1 class="logo">
+						<a href="index.html">
+							<img src="images/wp_logo_new_close.jpg">
+						</a>
+					</h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li>
+								<a href="#" class="icon solid fa-angle-down">About</a>
+								<ul>
+									<li><a href="project.html">Project</a></li>
+									<li><a href="people.html">People</a></li>
+									<li><a href="contact.html">Contact</a></li>
+								</ul>
+							</li>
+							<li><a href="news/">News</a></li>
+						</ul>
+					</nav>
+				</header>
 
-      <!-- Hero -->
-      <section class="hero">
-        <img class="hero__bg" src="images/efi_high-res.jpg" alt="" aria-hidden="true">
-        <div class="hero__shade"></div>
-        <div class="hero__content">
-          <h1>Contact</h1>
-        </div>
-      </section>
+				<section class="hero">
+					<!-- Background image (blurred via CSS) -->
+					<img class="hero__bg" src="images/efi_high-res.jpg" alt="" aria-hidden="true">
+				
+					<!-- Optional brand tint -->
+					<div class="hero__shade"></div>
+				
+					<!-- Text overlay -->
+					<div class="hero__content">
+					<h1>Contact</h1>
+					</div>
+				</section>
+			
 
-      <!-- Main -->
-      <section id="main" class="container">
-        <section class="box special">
-          <header class="major">
-            <h4>
-              Inclusive, public archaeology is extremely important to us and we would
-              love to hear your perception and interpretation of our work.
-            </h4>
-            <h4>
-              Get in touch, and sign up below with your email address to receive news and updates.
-            </h4>
-          </header>
-        </section>
+			<!-- Main -->
+			<section id = "main" class = "container">
+					<section class="box special">
+						<header class="major">
+							<h4>Inclusive, public archaeology is extremely important to us 
+								and we would love to hear your perception and interpretation of our work.
+							</h4>
+							<h4>Get in touch, and sign up below with your email address to receive
+								news and updates.
+							</h4>
+						</header>
+					</section>
+				
+				<div class = "box">
+				  <!-- Contact form (Formspree) -->
+				  <form id="contact-form"
+						action="https://formspree.io/f/mldpnbpy"
+						method="POST" accept-charset="UTF-8" novalidate
+						class="contact-form">
+		  
+					<div class="row gtr-uniform">
+					  <div class="col-6 col-12-medium">
+						<label for="name">Name</label>
+						<input type="text" id="name" name="name" required autocomplete="name" />
+					  </div>
+		  
+					  <div class="col-6 col-12-medium">
+						<label for="email">Email</label>
+						<input type="email" id="email" nsame="email" required autocomplete="email" />
+					  </div>
+		  
+					  <div class="col-12">
+						<label for="organisation">Organisation (optional)</label>
+						<input type="text" id="organisation" name="organisation" autocomplete="organization" />
+					  </div>
+		  
+					  <div class="col-12">
+						<label for="message">Message</label>
+						<textarea id="message" name="message" rows="6" required></textarea>
+					  </div>
+		  
+					  <!-- GDPR-style consent (edit text as needed) -->
+					  <div class="col-12">
+						<label>
+						  <input type="checkbox" name="consent" required />
+						  I consent to the Weaponised Pasts team storing and using my details to respond to this enquiry.
+						</label>
+					  </div>
+		  
+					  <!-- Hidden helpers -->
+					  <input type="hidden" name="_subject" value="New message from Weaponised Pasts" />
+					  <!-- honeypot to deter bots -->
+					  <input type="text" name="_gotcha" class="hp" autocomplete="off" />
+					  <!-- record page source -->
+					  <input type="hidden" name="page" value="contact.html" />
+		  
+					  <div class="col-12">
+						<button type="submit" class="primary">Send</button>
+						<p id="form-status" role="status" aria-live="polite" style="margin-top:.75rem;"></p>
+					  </div>
+					</div>
+				  </form>
+		  
+				  <style>
+					/* Hide honeypot */
+					.hp{position:absolute!important;left:-50000px!important;height:0!important;width:0!important;opacity:0!important}
+					/* Optional: make the form look like your theme’s forms, if needed */
+					.contact-form label{display:block;margin-bottom:.35rem}
+					.contact-form input[type="text"],
+					.contact-form input[type="email"],
+					.contact-form textarea{width:100%}
+				  </style>
+		  
+				  <script>
+					// Progressive enhancement: submit via fetch to keep user on the page
+					const form = document.getElementById('contact-form');
+					const statusEl = document.getElementById('form-status');
+		  
+					form.addEventListener('submit', async (e) => {
+					  e.preventDefault();
+					  statusEl.textContent = 'Sending…';
+					  const data = new FormData(form);
+					  try {
+						const resp = await fetch(form.action, {
+						  method: 'POST',
+						  body: data,
+						  headers: { 'Accept': 'application/json' }
+						});
+						if (resp.ok) {
+						  statusEl.textContent = 'Thanks — your message was sent.';
+						  form.reset();
+						} else {
+						  const j = await resp.json().catch(() => ({}));
+						  statusEl.textContent =
+							j.errors ? j.errors.map(err => err.message).join(', ')
+									 : 'Sorry, something went wrong. Please try again or email jmartind@ed.ac.uk.';
+						}
+					  } catch (err) {
+						statusEl.textContent = 'Network error — please try again or email jmartind@ed.ac.uk.';
+					  }
+					});
+				  </script>
+		  
+				</div>
 
-        <!-- CONTACT FORM: put the form inside a .box so it renders as a white card -->
-        <!-- CONTACT FORM (white card) -->
-<section class="box contact-card">
-	<form id="contact-form"
-		  action="https://formspree.io/f/mldpnbpy"
-		  method="POST" accept-charset="UTF-8" novalidate
-		  class="contact-form">
-  
-	  <div class="row gtr-uniform">
-		<div class="col-6 col-12-medium">
-		  <label for="name">Name</label>
-		  <input type="text" id="name" name="name" required autocomplete="name">
-		</div>
-  
-		<div class="col-6 col-12-medium">
-		  <label for="email">Email</label>
-		  <!-- make sure this is *name="email"* so Formspree sees it -->
-		  <input type="email" id="email" name="email" required autocomplete="email">
-		</div>
-  
-		<div class="col-12">
-		  <label for="organisation">Organisation (optional)</label>
-		  <input type="text" id="organisation" name="organisation" autocomplete="organization">
-		</div>
-  
-		<div class="col-12">
-		  <label for="message">Message</label>
-		  <textarea id="message" name="message" rows="8" required></textarea>
-		</div>
-  
-		<div class="col-12">
-		  <label class="consent">
-			<input type="checkbox" name="consent" required>
-			<span>I consent to the Weaponised Pasts team storing and using my details to respond to this enquiry.</span>
-		  </label>
-		</div>
-  
-		<!-- Formspree helpers -->
-		<input type="hidden" name="_subject" value="New message from Weaponised Pasts">
-		<input type="text" name="_gotcha" class="hp" autocomplete="off"> <!-- honeypot -->
-		<input type="hidden" name="page" value="contact.html">
-  
-		<div class="col-12">
-		  <ul class="actions">
-			<!-- use theme button classes so it’s not the tiny default -->
-			<li><input type="submit" class="button primary" value="Send message"></li>
-		  </ul>
-		  <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
-		</div>
-	  </div>
-	</form>
-  </section>
-  
-  <!-- page-scoped tweaks so the card and controls look right -->
-  <style>
-	/* ensure the card is visibly the same white as other boxes */
-	.box.contact-card { background:#fff; padding:2rem; border-radius:6px; }
-	/* make fields fill columns */
-	.contact-form input[type="text"],
-	.contact-form input[type="email"],
-	.contact-form textarea { width:100%; }
-	.contact-form textarea { min-height:12rem; }
-	/* consent line alignment */
-	.contact-form .consent { display:flex; gap:.6rem; align-items:flex-start; }
-	.contact-form .consent input { margin-top:.35rem; }
-	/* hide honeypot */
-	.hp { position:absolute !important; left:-50000px !important; height:0 !important; width:0 !important; opacity:0 !important; }
-  </style>
-  
-  <script>
-	// Graceful Formspree submit with inline status
-	const form = document.getElementById('contact-form');
-	const statusEl = document.getElementById('form-status');
-  
-	form.addEventListener('submit', async (e) => {
-	  e.preventDefault();
-	  statusEl.textContent = 'Sending…';
-	  const data = new FormData(form);
-	  try {
-		const resp = await fetch(form.action, {
-		  method: 'POST',
-		  body: data,
-		  headers: { 'Accept': 'application/json' }
-		});
-		if (resp.ok) {
-		  statusEl.textContent = 'Thanks — your message was sent.';
-		  form.reset();
-		} else {
-		  const j = await resp.json().catch(() => ({}));
-		  statusEl.textContent =
-			j.errors ? j.errors.map(err => err.message).join(', ')
-					 : 'Sorry, something went wrong. Please try again.';
-		}
-	  } catch {
-		statusEl.textContent = 'Network error — please try again.';
-	  }
-	});
-  </script>
-  
+				<section id="cta">
+					<h2>Sign up for project updates</h2>
+					<form action="https://formspree.io/f/mrbykqjk" method="POST">
+					  <!-- Optional: set a subject and a redirect after submit -->
+					  <input type="hidden" name="_subject" value="New newsletter subscriber">
+					  <input type="hidden" name="_redirect" value="https://weaponisedpasts.org/thanks.html#subscribed">
+					  <!-- Spam trap -->
+					  <input type="text" name="_gotcha" style="display:none">
+				  
+					  <div class="row gtr-50 gtr-uniform">
+						<div class="col-8 col-12-mobilep">
+						  <label class="sr-only" for="sub-email">Email</label>
+						  <input type="email" name="email" id="sub-email" placeholder="Email Address" required>
+						</div>
+						<div class="col-4 col-12-mobilep">
+						  <button type="submit" class="fit">Sign Up</button>
+						</div>
+					  </div>
+					</form>
+				  </section>
+				  
+			  </section>
 
-      <!-- CTA (full-width brand red, directly above footer) -->
-      <section id="cta" class="brand-cta">
-        <div class="inner">
-          <h2>Sign up for project updates</h2>
-          <form action="https://formspree.io/f/mrbykqjk" method="POST">
-            <input type="hidden" name="_subject" value="New newsletter subscriber">
-            <input type="hidden" name="_redirect" value="https://weaponisedpasts.org/thanks.html#subscribed">
-            <input type="text" name="_gotcha" style="display:none">
+			<!-- Footer -->
+			<footer id="site-footer" class="brand-footer">
+				<div class="footer-inner">
+				<!-- Left column -->
+				<div class="footer-col contact">
+					<p>
+					If you have any comments or questions please get in touch with the project team at
+					<a href="mailto:jmartind@ed.ac.uk">jmartind@ed.ac.uk</a>
+					</p>
+				</div>
+			
+				<!-- Middle column -->
+				<div class="footer-col follow">
+					<p class="heading">Follow us!</p>
+					<nav class="social">
+					<!-- Bluesky (file you provide) -->
+					<a class="social-link" href="https://bsky.app/profile/weaponisedpasts.bsky.social" target="_blank" rel="noopener">
+						<span class="sr-only">Bluesky</span>
+						<img src="assets/icons/bluesky.svg" alt="" aria-hidden="true" />
+					</a>
+			
+					<!-- X/Twitter (Font Awesome icon from the theme) -->
+					<a class="social-link" href="https://x.com/WeaponisedPasts" target="_blank" rel="noopener" aria-label="X (Twitter)">
+						<span class="icon brands fa-twitter" aria-hidden="true"></span>
+					</a>
+			
+					<!-- LinkedIn -->
+					<a class="social-link" href="https://www.linkedin.com/company/108832533/" target="_blank" rel="noopener" aria-label="LinkedIn">
+						<span class="icon brands fa-linkedin-in" aria-hidden="true"></span>
+					</a>
+					</nav>
+				</div>
+			
+				<!-- Right column -->
+				<div class="footer-col links">
+					<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="project.html">Project</a></li>
+					<li><a href="people.html">People</a></li>
+					<li><a href="contact.html">Contact</a></li>
+					<li><a href="news/">News</a></li>
+					</ul>
+				</div>
+				</div>
 
-            <div class="row gtr-50 gtr-uniform">
-              <div class="col-8 col-12-mobilep">
-                <label class="sr-only" for="sub-email">Email</label>
-                <input type="email" name="email" id="sub-email" placeholder="Email Address" required>
-              </div>
-              <div class="col-4 col-12-mobilep">
-                <button type="submit" class="fit">Sign Up</button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </section>
+				<!-- Beige brand bar: logos + copyright -->
+				<div class="footer-brandbar">
+					<div class="footer-logos">
+					<div class="footer-col logo">
+						<img src="images/leverhulme_w300.png" alt="Leverhulme Trust" loading="lazy">
+					</div>
+					<div class="footer-col logo">
+						<img src="images/transparent_edinburgh_closer.png" alt="University of Edinburgh" loading="lazy">
+					</div>
+					<div class="footer-col logo">
+						<img src="images/trento_w300.png" alt="University of Trento" loading="lazy">
+					</div>
+					</div>
+				
+					<div class="footer-meta">
+					<p>© Weaponised Pasts. All rights reserved.</p>
+					</div>
+				</div>
+			</footer>
 
-      <style>
-        /* Brand CTA full-bleed band */
-        :root{
-          --brand-red:#8b2f24;   /* tweak if you use another hex */
-          --brand-cream:#efe5d8; /* used elsewhere */
-        }
-        .brand-cta{
-          background:var(--brand-red);
-          color:#fff;
-          padding:3rem 1rem;
-        }
-        .brand-cta .inner{
-          max-width: 1100px;
-          margin: 0 auto;
-        }
-        .brand-cta h2{color:#fff;text-align:center;margin:0 0 1.25rem}
-        .brand-cta input[type="email"]{
-          background:rgba(255,255,255,.95);
-          color:#000;
-          border-color:transparent;
-        }
-        .brand-cta button{
-          background:#fff;
-          color:var(--brand-red);
-          border:none;
-        }
-        .brand-cta button:hover{filter:brightness(.95)}
-      </style>
+			</div>
 
-      <!-- Footer -->
-      <footer id="site-footer" class="brand-footer">
-        <div class="footer-inner">
-          <!-- Left column -->
-          <div class="footer-col contact">
-            <p>
-              If you have any comments or questions please get in touch with the project team at
-              <a href="mailto:jmartind@ed.ac.uk">jmartind@ed.ac.uk</a>
-            </p>
-          </div>
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.dropotron.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
 
-          <!-- Middle column -->
-          <div class="footer-col follow">
-            <p class="heading">Follow us!</p>
-            <nav class="social">
-              <a class="social-link" href="https://bsky.app/profile/weaponisedpasts.bsky.social" target="_blank" rel="noopener">
-                <span class="sr-only">Bluesky</span>
-                <img src="assets/icons/bluesky.svg" alt="" aria-hidden="true" />
-              </a>
-              <a class="social-link" href="https://x.com/WeaponisedPasts" target="_blank" rel="noopener" aria-label="X (Twitter)">
-                <span class="icon brands fa-twitter" aria-hidden="true"></span>
-              </a>
-              <a class="social-link" href="https://www.linkedin.com/company/108832533/" target="_blank" rel="noopener" aria-label="LinkedIn">
-                <span class="sr-only">LinkedIn</span>
-				<img src ="assets/icons/linkedin.svg", alt="" aria-hidden="true" />
-              </a>
-            </nav>
-          </div>
-
-          <!-- Right column -->
-          <div class="footer-col links">
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="project.html">Project</a></li>
-              <li><a href="people.html">People</a></li>
-              <li><a href="contact.html">Contact</a></li>
-              <li><a href="news/">News</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Beige brand bar -->
-        <div class="footer-brandbar">
-          <div class="footer-logos">
-            <div class="footer-col logo">
-              <img src="images/leverhulme_w300.png" alt="Leverhulme Trust" loading="lazy">
-            </div>
-            <div class="footer-col logo">
-              <img src="images/transparent_edinburgh_closer.png" alt="University of Edinburgh" loading="lazy">
-            </div>
-            <div class="footer-col logo">
-              <img src="images/trento_w300.png" alt="University of Trento" loading="lazy">
-            </div>
-          </div>
-
-          <div class="footer-meta">
-            <p>© Weaponised Pasts. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
-
-    </div>
-
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.dropotron.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-  </body>
+</body>
 </html>
