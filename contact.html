@@ -125,33 +125,42 @@
 					.contact-form textarea{width:100%}
 				  </style>
 		  
-				<script>
-					const form = document.getElementById('contact-form');
-					const statusEl = document.getElementById('form-status');
-				
-					form.addEventListener('submit', async (e) => {
-					e.preventDefault();
-					statusEl.textContent = 'Sending…';
-					try {
-						const resp = await fetch(form.action, {
-						method: 'POST',
-						body: new FormData(form),
-						headers: { 'Accept': 'application/json' }
-						});
-						if (resp.ok) {
-						statusEl.textContent = 'Thanks — your message was sent.';
-						form.reset();
-						} else {
-						const j = await resp.json().catch(() => ({}));
-						statusEl.textContent = j.errors
-							? j.errors.map(err => err.message).join(', ')
-							: 'Sorry, something went wrong. Please try again or email jmartind@ed.ac.uk.';
-						}
-					} catch {
-						statusEl.textContent = 'Network error — please try again or email jmartind@ed.ac.uk.';
-					}
-					});
-				</script>
+		  <script>
+			const form = document.getElementById('contact-form');
+			const statusEl = document.getElementById('form-status');
+		  
+			form.addEventListener('submit', async (e) => {
+			  e.preventDefault();
+		  
+			  /* NEW: if the form has invalid fields, show the browser’s messages
+				 and STOP (don’t try to send). */
+			  if (!form.checkValidity()) {
+				form.reportValidity();
+				return;
+			  }
+		  
+			  statusEl.textContent = 'Sending…';
+			  try {
+				const resp = await fetch(form.action, {
+				  method: 'POST',
+				  body: new FormData(form),
+				  headers: { 'Accept': 'application/json' }
+				});
+		  
+				if (resp.ok) {
+				  statusEl.textContent = 'Thanks — your message was sent.';
+				  form.reset();
+				} else {
+				  const j = await resp.json().catch(() => ({}));
+				  statusEl.textContent = j.errors
+					? j.errors.map(err => err.message).join(', ')
+					: 'Sorry, something went wrong. Please try again or email jmartind@ed.ac.uk.';
+				}
+			  } catch {
+				statusEl.textContent = 'Network error — please try again or email jmartind@ed.ac.uk.';
+			  }
+			});
+		  </script>		  
 
 			</section>
 

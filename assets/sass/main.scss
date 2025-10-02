@@ -3152,4 +3152,52 @@ $brand-red: #933222;
   }
   
   .form-card .consent label{ margin:0; }
+
+  
+  /* Focus style */
+.form-card input[type="text"],
+.form-card input[type="email"],
+.form-card textarea {
+  border: 1px solid #d2d6dc;
+  transition: border-color .15s, box-shadow .15s;
+}
+
+.form-card input:focus,
+.form-card textarea:focus {
+  outline: none;
+  border-color: #243741;                 /* brand navy */
+  box-shadow: 0 0 0 3px rgba(36,55,65,.12);
+}
+
+/* Invalid state colour (optional) */
+.form-card input:invalid,
+.form-card textarea:invalid {
+  border-color: #c23a2b;                 /* subtle brand red */
+  box-shadow: none;
+}
+
+
+/* Make the consent checkbox visible again and style it */
+.consent {
+	display: flex;
+	align-items: flex-start;
+	gap: .65rem;
+	margin: 0.75rem 0 0;
+  }
+  
+  .consent input[type="checkbox"] {
+	display: inline-block !important;      /* override theme's hidden input */
+	appearance: auto;
+	-webkit-appearance: auto;
+	-moz-appearance: auto;
+	width: 1.1rem;
+	height: 1.1rem;
+	margin-top: .25rem;
+	accent-color: #2a3b42;                 /* brand navy tick/box color */
+  }
+  
+  .consent label {
+	margin: 0;
+	line-height: 1.35;
+  }
   
