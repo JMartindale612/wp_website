@@ -3133,3 +3133,23 @@ $brand-red: #933222;
 
 /* Small status line */
 .status { margin: .5rem 0 0; font-size: .95rem; }
+
+/* Make sure the consent checkbox is visible and aligned */
+.form-card .consent{
+	display:flex;
+	align-items:center;
+	gap:.75rem;
+	margin-top:1rem;
+  }
+  
+  /* Override theme styles that hide/skin checkboxes */
+  .form-card input[type="checkbox"]{
+	appearance:auto;
+	-webkit-appearance:auto;
+	width:1.15rem;
+	height:1.15rem;
+	margin:0;
+  }
+  
+  .form-card .consent label{ margin:0; }
+  
