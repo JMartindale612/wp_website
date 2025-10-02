@@ -56,94 +56,104 @@
         </section>
 
         <!-- CONTACT FORM: put the form inside a .box so it renders as a white card -->
-        <section class="box">
-          <form id="contact-form"
-                action="https://formspree.io/f/mldpnbpy"
-                method="POST" accept-charset="UTF-8" novalidate
-                class="contact-form">
-
-            <div class="row gtr-uniform">
-              <div class="col-6 col-12-medium">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required autocomplete="name" />
-              </div>
-
-              <div class="col-6 col-12-medium">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required autocomplete="email" />
-              </div>
-
-              <div class="col-12">
-                <label for="organisation">Organisation (optional)</label>
-                <input type="text" id="organisation" name="organisation" autocomplete="organization" />
-              </div>
-
-              <div class="col-12">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="6" required></textarea>
-              </div>
-
-              <div class="col-12">
-                <label>
-                  <input type="checkbox" name="consent" required />
-                  I consent to the Weaponised Pasts team storing and using my details to respond to this enquiry.
-                </label>
-              </div>
-
-              <!-- Hidden helpers -->
-              <input type="hidden" name="_subject" value="New message from Weaponised Pasts" />
-              <input type="text" name="_gotcha" class="hp" autocomplete="off" />
-              <input type="hidden" name="page" value="contact.html" />
-
-              <div class="col-12">
-                <button type="submit" class="primary">Send</button>
-                <p id="form-status" role="status" aria-live="polite" style="margin-top:.75rem;"></p>
-              </div>
-            </div>
-          </form>
-        </section>
-
-        <!-- page-level tweaks just for the contact page -->
-        <style>
-          /* Hide honeypot */
-          .hp{position:absolute!important;left:-50000px!important;height:0!important;width:0!important;opacity:0!important}
-          /* Make form controls fill their columns */
-          .contact-form label{display:block;margin-bottom:.35rem}
-          .contact-form input[type="text"],
-          .contact-form input[type="email"],
-          .contact-form textarea{width:100%}
-        </style>
-
-        <script>
-          // Keep user on page; show result under button
-          const form = document.getElementById('contact-form');
-          const statusEl = document.getElementById('form-status');
-
-          form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            statusEl.textContent = 'Sending…';
-            const data = new FormData(form);
-            try {
-              const resp = await fetch(form.action, {
-                method: 'POST',
-                body: data,
-                headers: { 'Accept': 'application/json' }
-              });
-              if (resp.ok) {
-                statusEl.textContent = 'Thanks — your message was sent.';
-                form.reset();
-              } else {
-                const j = await resp.json().catch(() => ({}));
-                statusEl.textContent =
-                  j.errors ? j.errors.map(err => err.message).join(', ')
-                           : 'Sorry, something went wrong. Please try again or email jmartind@ed.ac.uk.';
-              }
-            } catch {
-              statusEl.textContent = 'Network error — please try again or email jmartind@ed.ac.uk.';
-            }
-          });
-        </script>
-      </section><!-- /#main.container -->
+        <!-- CONTACT FORM (white card) -->
+<section class="box contact-card">
+	<form id="contact-form"
+		  action="https://formspree.io/f/mldpnbpy"
+		  method="POST" accept-charset="UTF-8" novalidate
+		  class="contact-form">
+  
+	  <div class="row gtr-uniform">
+		<div class="col-6 col-12-medium">
+		  <label for="name">Name</label>
+		  <input type="text" id="name" name="name" required autocomplete="name">
+		</div>
+  
+		<div class="col-6 col-12-medium">
+		  <label for="email">Email</label>
+		  <!-- make sure this is *name="email"* so Formspree sees it -->
+		  <input type="email" id="email" name="email" required autocomplete="email">
+		</div>
+  
+		<div class="col-12">
+		  <label for="organisation">Organisation (optional)</label>
+		  <input type="text" id="organisation" name="organisation" autocomplete="organization">
+		</div>
+  
+		<div class="col-12">
+		  <label for="message">Message</label>
+		  <textarea id="message" name="message" rows="8" required></textarea>
+		</div>
+  
+		<div class="col-12">
+		  <label class="consent">
+			<input type="checkbox" name="consent" required>
+			<span>I consent to the Weaponised Pasts team storing and using my details to respond to this enquiry.</span>
+		  </label>
+		</div>
+  
+		<!-- Formspree helpers -->
+		<input type="hidden" name="_subject" value="New message from Weaponised Pasts">
+		<input type="text" name="_gotcha" class="hp" autocomplete="off"> <!-- honeypot -->
+		<input type="hidden" name="page" value="contact.html">
+  
+		<div class="col-12">
+		  <ul class="actions">
+			<!-- use theme button classes so it’s not the tiny default -->
+			<li><input type="submit" class="button primary" value="Send message"></li>
+		  </ul>
+		  <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+		</div>
+	  </div>
+	</form>
+  </section>
+  
+  <!-- page-scoped tweaks so the card and controls look right -->
+  <style>
+	/* ensure the card is visibly the same white as other boxes */
+	.box.contact-card { background:#fff; padding:2rem; border-radius:6px; }
+	/* make fields fill columns */
+	.contact-form input[type="text"],
+	.contact-form input[type="email"],
+	.contact-form textarea { width:100%; }
+	.contact-form textarea { min-height:12rem; }
+	/* consent line alignment */
+	.contact-form .consent { display:flex; gap:.6rem; align-items:flex-start; }
+	.contact-form .consent input { margin-top:.35rem; }
+	/* hide honeypot */
+	.hp { position:absolute !important; left:-50000px !important; height:0 !important; width:0 !important; opacity:0 !important; }
+  </style>
+  
+  <script>
+	// Graceful Formspree submit with inline status
+	const form = document.getElementById('contact-form');
+	const statusEl = document.getElementById('form-status');
+  
+	form.addEventListener('submit', async (e) => {
+	  e.preventDefault();
+	  statusEl.textContent = 'Sending…';
+	  const data = new FormData(form);
+	  try {
+		const resp = await fetch(form.action, {
+		  method: 'POST',
+		  body: data,
+		  headers: { 'Accept': 'application/json' }
+		});
+		if (resp.ok) {
+		  statusEl.textContent = 'Thanks — your message was sent.';
+		  form.reset();
+		} else {
+		  const j = await resp.json().catch(() => ({}));
+		  statusEl.textContent =
+			j.errors ? j.errors.map(err => err.message).join(', ')
+					 : 'Sorry, something went wrong. Please try again.';
+		}
+	  } catch {
+		statusEl.textContent = 'Network error — please try again.';
+	  }
+	});
+  </script>
+  
 
       <!-- CTA (full-width brand red, directly above footer) -->
       <section id="cta" class="brand-cta">
