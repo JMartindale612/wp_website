@@ -3258,4 +3258,50 @@ $brand-red: #933222;
 	  color: #1f2f39;
 	}
   }
-  
+
+  /* Advisory box */
+.box.advisory { padding: 0; }
+
+/* Red panel header that blends with .box padding */
+.advisory__header {
+  background: var(--brand-red, #8b3a2b);
+  color: #fff;
+  padding: 1.15rem 1.75rem;
+  border-radius: 6px 6px 0 0;
+}
+
+/* Body gets normal box padding */
+.advisory__body { padding: 1.5rem 1.75rem 1.75rem; }
+
+/* Table styling */
+.advisory-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.05rem;
+}
+
+.advisory-table th,
+.advisory-table td {
+  padding: 0.9rem 0.75rem;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.advisory-table thead th {
+  background: #f7f7f7;
+  color: var(--brand-navy, #2f3f48);
+  font-weight: 600;
+}
+
+.advisory-table tbody tr:nth-child(even) td {
+  background: rgba(0,0,0,0.02);
+}
+
+/* Link style inside the table */
+.advisory-table a {
+  color: var(--brand-red, #8b3a2b);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+}
+.advisory-table a:hover { opacity: .85; }
