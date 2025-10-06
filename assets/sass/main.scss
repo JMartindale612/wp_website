@@ -3201,3 +3201,61 @@ $brand-red: #933222;
 	line-height: 1.35;
   }
   
+  /* Advisory Group card */
+.advisory {
+	padding: 0;
+	overflow: hidden;         /* keep rounded corners tidy */
+	border-radius: 10px;
+	background: #fff;
+  }
+  
+  /* Brand red header bar (same red as subscribe section) */
+  .advisory__header {
+	background: #8e3524;
+	color: #fff;
+	padding: 1.1rem 1.25rem;
+  }
+  .advisory__header h2 { margin: 0; font-weight: 700; }
+  
+  /* Table layout */
+  .advisory__body { padding: 1.25rem; }
+  
+  .advisory-table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 1rem;
+	line-height: 1.5;
+	background: #fff;
+  }
+  
+  .advisory-table th,
+  .advisory-table td {
+	padding: .85rem 1rem;
+	border-bottom: 1px solid #e9ecef;
+	vertical-align: top;
+  }
+  
+  .advisory-table th {
+	text-align: left;
+	width: 28%;
+	font-weight: 700;
+	color: #1f2f39;  /* legible navy tone */
+  }
+  
+  .advisory-table a { text-decoration: underline; }
+  
+  /* Mobile: stack cells per row for readability */
+  @media (max-width: 640px) {
+	.advisory-table thead { display: none; }
+	.advisory-table tr { display: block; margin-bottom: 1rem; }
+	.advisory-table td {
+	  display: block;
+	  border-bottom: 0;
+	  padding: .35rem 0;
+	}
+	.advisory-table td:first-child {
+	  font-weight: 700;
+	  color: #1f2f39;
+	}
+  }
+  
