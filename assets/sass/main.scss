@@ -3306,13 +3306,12 @@ $brand-red: #933222;
 }
 .advisory-table a:hover { opacity: .85; }
 
-/* Post content images */
-.post-page .content img {
-	max-width: 700px;     /* adjust to taste */
+
+.post-page section.box.post .content img {
+	max-width: 650px;
 	width: 100%;
 	height: auto;
 	display: block;
-	margin: 2rem auto;   /* centres the image */
-	border-radius: 6px;  /* optional, but looks nice */
+	margin: 2rem auto;
   }
   
