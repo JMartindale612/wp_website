@@ -3305,3 +3305,12 @@ $brand-red: #933222;
   text-underline-offset: 2px;
 }
 .advisory-table a:hover { opacity: .85; }
+
+.post-page .content img {
+	max-width: 600px;
+	width: 100%;
+	height: auto;
+	display: block;
+	margin: 2rem auto;
+  }
+  
