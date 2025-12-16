@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Job advert - Research Fellow"
+title: "Job advertisement - Post-doctoral Research Fellow"
 date: 2025-12-16
 hero_image: /images/places/edinburgh_winter.jpg  # optional
 # summary: "What we’ll publish here and how to follow along."  # optional (used on index)
