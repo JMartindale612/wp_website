@@ -2,7 +2,7 @@
 layout: post
 title: "Job advert - Research Fellow"
 date: 2025-12-16
-hero_image: /images/castle_facade.jpeg  # optional
+hero_image: /images/people/efi.jpeg  # optional
 # summary: "What we’ll publish here and how to follow along."  # optional (used on index)
 ---
 
