@@ -35,6 +35,16 @@
       </nav>
     </header>
 
+    {% if page.hero_image %}
+    <section class="hero">
+       <img class="hero__bg" src="{{ page.hero_image | relative_url }}" alt="">
+       <div class="hero__shade"></div>
+       <div class="hero__content">
+    <h1>{{ page.title }}</h1>
+    </div>
+    </section>
+    {% endif %}
+
     <!-- Main: centered white card -->
     <section id="main" class="container">
       <section class="box post">

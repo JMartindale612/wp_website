@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Come and join us - Two-year Post-doctoral Research Fellow"
+title: "Job advert - Research Fellow"
 date: 2025-09-30
 hero_image: /images/castle_facade.jpeg  # optional
 # summary: "What we’ll publish here and how to follow along."  # optional (used on index)
@@ -8,7 +8,7 @@ hero_image: /images/castle_facade.jpeg  # optional
 
 Come and work with us!
 
-<!-- More -->
+![Team at the Launch]({{ '/images/team_launch.jpg' | relative_url }})
 
 We are now advertising for a two-year full-time Post-Doctoral Research Fellow to come and join our project. This is an exciting role for someone to work on the experimental strand of our Leverhulme Trust-funded project, assessing the cultural evolution of heritage-based hostility using advanced transmission chain experiments and natural language processing techniques. 
 
