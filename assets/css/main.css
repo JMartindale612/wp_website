@@ -5187,7 +5187,7 @@ body.landing .container > .box.special:first-child {
 }
 
 .post-page section.box.post .content img {
-  max-width: 300px;
+  max-width: 650px;
   width: 100%;
   height: auto;
   display: block;
