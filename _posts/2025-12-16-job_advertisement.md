@@ -2,7 +2,7 @@
 layout: post
 title: "Come and join us - Two-year Post-doctoral Research Fellow"
 date: 2025-09-30
-hero_image: {{ '/images/castle_facade.jpeg' | relative_url }})   # optional
+hero_image: /images/castle_facade.jpeg  # optional
 # summary: "What we’ll publish here and how to follow along."  # optional (used on index)
 ---
 
