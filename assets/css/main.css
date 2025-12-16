@@ -5058,4 +5058,139 @@ body.landing .container > .box.special:first-child {
   margin: 0;
   line-height: 1.35;
 }
+
+/* Advisory Group card */
+.advisory {
+  padding: 0;
+  overflow: hidden;
+  /* keep rounded corners tidy */
+  border-radius: 10px;
+  background: #fff;
+}
+
+/* Brand red header bar (same red as subscribe section) */
+.advisory__header {
+  background: #8e3524;
+  color: #fff;
+  padding: 1.1rem 1.25rem;
+}
+
+.advisory__header h2 {
+  margin: 0;
+  font-weight: 700;
+}
+
+/* Table layout */
+.advisory__body {
+  padding: 1.25rem;
+}
+
+.advisory-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  line-height: 1.5;
+  background: #fff;
+}
+
+.advisory-table th,
+.advisory-table td {
+  padding: .85rem 1rem;
+  border-bottom: 1px solid #e9ecef;
+  vertical-align: top;
+}
+
+.advisory-table th {
+  text-align: left;
+  width: 28%;
+  font-weight: 700;
+  color: #1f2f39;
+  /* legible navy tone */
+}
+
+.advisory-table a {
+  text-decoration: underline;
+}
+
+/* Mobile: stack cells per row for readability */
+@media (max-width: 640px) {
+  .advisory-table thead {
+    display: none;
+  }
+  .advisory-table tr {
+    display: block;
+    margin-bottom: 1rem;
+  }
+  .advisory-table td {
+    display: block;
+    border-bottom: 0;
+    padding: .35rem 0;
+  }
+  .advisory-table td:first-child {
+    font-weight: 700;
+    color: #1f2f39;
+  }
+}
+
+/* Advisory box */
+.box.advisory {
+  padding: 0;
+}
+
+/* Red panel header that blends with .box padding */
+.advisory__header {
+  background: var(--brand-red, #8b3a2b);
+  color: #fff;
+  padding: 1.15rem 1.75rem;
+  border-radius: 6px 6px 0 0;
+}
+
+/* Body gets normal box padding */
+.advisory__body {
+  padding: 1.5rem 1.75rem 1.75rem;
+}
+
+/* Table styling */
+.advisory-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.05rem;
+}
+
+.advisory-table th,
+.advisory-table td {
+  padding: 0.9rem 0.75rem;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.advisory-table thead th {
+  background: #f7f7f7;
+  color: var(--brand-navy, #2f3f48);
+  font-weight: 600;
+}
+
+.advisory-table tbody tr:nth-child(even) td {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+/* Link style inside the table */
+.advisory-table a {
+  color: var(--brand-red, #8b3a2b);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+}
+
+.advisory-table a:hover {
+  opacity: .85;
+}
+
+.post-page section.box.post .content img {
+  max-width: 300px;
+  width: 50%;
+  height: auto;
+  display: block;
+  margin: 2rem auto;
+}
 /*# sourceMappingURL=main.css.map */
