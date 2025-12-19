@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Call for Contributions - EAA 2026"
-date: 2025-12-16
-hero_image: /images/places/athens_2.jpg  # optional
+date: 2025-12-19
+hero_image: /images/athens_2.jpg  # optional
 # summary: "What we’ll publish here and how to follow along."  # optional (used on index)
 ---
 
@@ -18,11 +18,10 @@ We very much look forward to your contributions! More detail about the objective
 
 ![Athens]({{ '/images/athens.jpg' | relative_url }})
 
-## Detailed session information**
+## Detailed session information
 
 Theme: Crossing the divide. Archaeology and the open world
 Session format: Session with precirculated papers
-
 
 **Session rationale**
 
@@ -34,16 +33,19 @@ On the other hand, these same environments are characterised by intense contesta
 
 Against this backdrop, the session brings together empirical, methodological, and theoretical contributions that critically examine the role of archaeology within contemporary networked communication and digital heritage ecosystems.
 
-Submission details
-•	Call for Contributions: 19 December – 5 February
-•	Submission system: https://submissions.e-a-a.org/eaa2026/login
-•	Please select Session #211 when submitting your abstract.
-•	Abstracts are evaluated by the EAA Programme Committee.
-•	Full paper deadline (for accepted contributions): 1 August 2026.
+**Submission details:**
+
+<br>- Call for Contributions: 19 December – 5 February
+<br>- Submission system: https://submissions.e-a-a.org/eaa2026/login
+<br>- Please select Session #211 when submitting your abstract.
+<br>- Abstracts are evaluated by the EAA Programme Committee.
+- Full paper deadline (for accepted contributions): 1 August 2026.
+
 Further information on the conference, sessions, and submission procedures:
-•	https://www.e-a-a.org/EAA2026/EAA2026/Home.aspx
-•	https://www.e-a-a.org/EAA2026/sessions
-•	https://www.e-a-a.org/EAA2026/contributions
+
+<br>- https://www.e-a-a.org/EAA2026/EAA2026/Home.aspx
+<br>- https://www.e-a-a.org/EAA2026/sessions
+<br>- https://www.e-a-a.org/EAA2026/contributions
 
 ________________________________________
 
