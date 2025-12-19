@@ -8,7 +8,7 @@ hero_image: /images/athens_2.jpg  # optional
 
 ## Call for Contributions
 
-We are delighted to annoucne that our session **“Archaeological Heritage on Social Media: Identity Nexus, Contact Zone, or Battlefield?”** has been accepted at the 32nd Annual Meeting of the European Association of Archaeologists (EAA 2026) in Athens next year.
+We are delighted to announce that our session **“Archaeological Heritage on Social Media: Identity Nexus, Contact Zone, or Battlefield?”** has been accepted at the 32nd Annual Meeting of the European Association of Archaeologists (EAA 2026) in Athens next year.
 
 The session is part of the conference theme **“Crossing the divide. Archaeology and the open world”** and focuses on how social media reshape identities, participation, and contestation around archaeological heritage.
 
@@ -35,18 +35,21 @@ Against this backdrop, the session brings together empirical, methodological, an
 
 **Submission details:**
 
-<br>- Call for Contributions: 19 December – 5 February
-<br>- Submission system: https://submissions.e-a-a.org/eaa2026/login
-<br>- Please select Session #211 when submitting your abstract.
-<br>- Abstracts are evaluated by the EAA Programme Committee.
-- Full paper deadline (for accepted contributions): 1 August 2026.
+<li>
+    <ul> Call for Contributions: 19 December – 5 February
+    <ul>- Submission system: https://submissions.e-a-a.org/eaa2026/login
+    <ul>- Please select Session #211 when submitting your abstract.
+    <ul>- Abstracts are evaluated by the EAA Programme Committee.
+    <ul>- Full paper deadline (for accepted contributions): 1 August 2026.
+</li>
 
 Further information on the conference, sessions, and submission procedures:
 
-<br>- https://www.e-a-a.org/EAA2026/EAA2026/Home.aspx
-<br>- https://www.e-a-a.org/EAA2026/sessions
-<br>- https://www.e-a-a.org/EAA2026/contributions
-
+<li>
+    <ul>- https://www.e-a-a.org/EAA2026/EAA2026/Home.aspx
+    <br>- https://www.e-a-a.org/EAA2026/sessions
+    <br>- https://www.e-a-a.org/EAA2026/contributions
+</li>
 ________________________________________
 
 **Session organisers**
