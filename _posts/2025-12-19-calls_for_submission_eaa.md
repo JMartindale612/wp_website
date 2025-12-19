@@ -47,18 +47,18 @@ Details for submission are:
 
 Further information on the conference, sessions, and submission procedures:
 
-<li>
-    <ul> https://www.e-a-a.org/EAA2026/EAA2026/Home.aspx
-    <ul> https://www.e-a-a.org/EAA2026/sessions
-    <ul> https://www.e-a-a.org/EAA2026/contributions
-</li>
+<ul>
+    <li> https://www.e-a-a.org/EAA2026/EAA2026/Home.aspx
+    <li> https://www.e-a-a.org/EAA2026/sessions
+    <li> https://www.e-a-a.org/EAA2026/contributions
+</ul>
 ________________________________________
 
 **Session organisers**
 
-<li>
-    <ul> Costis Dallas (Vilnius University; Athena Research Centre, Greece)
-    <ul> Chiara Bonacchi (University of Edinburgh, United Kingdom)
-    <ul> Ingrida Kelpšienė (Vilnius University, Lithuania)
-    <ul> John-Paul Martindale (University of Edinburgh, United Kingdom)
-</li>
+<ul>
+    <li> Costis Dallas (Vilnius University; Athena Research Centre, Greece)
+    <li> Chiara Bonacchi (University of Edinburgh, United Kingdom)
+    <li> Ingrida Kelpšienė (Vilnius University, Lithuania)
+    <li> John-Paul Martindale (University of Edinburgh, United Kingdom)
+</ul>
