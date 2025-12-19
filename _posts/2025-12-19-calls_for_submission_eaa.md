@@ -6,7 +6,7 @@ hero_image: /images/athens_2.jpg  # optional
 # summary: "What we’ll publish here and how to follow along."  # optional (used on index)
 ---
 
-## Call for Contributions
+# Call for Contributions
 
 We are delighted to announce that our session **“Archaeological Heritage on Social Media: Identity Nexus, Contact Zone, or Battlefield?”** has been accepted at the 32nd Annual Meeting of the European Association of Archaeologists (EAA 2026) in Athens next year.
 
@@ -23,7 +23,7 @@ We very much look forward to your contributions! More detail about the objective
 Theme: Crossing the divide. Archaeology and the open world
 Session format: Session with precirculated papers
 
-**Session rationale**
+### Session rationale
 
 The pervasive presence of archaeological heritage on social media is profoundly reshaping the theory and practice of public archaeology across communication, participation, and contestation. From text-based platforms such as Facebook and Wikipedia to image-based environments like Instagram and video-sharing platforms including YouTube and TikTok, archaeological heritage is increasingly encountered, interpreted, and mobilised in everyday digital practices.
 
@@ -33,28 +33,32 @@ On the other hand, these same environments are characterised by intense contesta
 
 Against this backdrop, the session brings together empirical, methodological, and theoretical contributions that critically examine the role of archaeology within contemporary networked communication and digital heritage ecosystems.
 
-**Submission details:**
+### Submission details
+
+Details for submission are:
 
 <li>
     <ul> Call for Contributions: 19 December – 5 February
-    <ul>- Submission system: https://submissions.e-a-a.org/eaa2026/login
-    <ul>- Please select Session #211 when submitting your abstract.
-    <ul>- Abstracts are evaluated by the EAA Programme Committee.
-    <ul>- Full paper deadline (for accepted contributions): 1 August 2026.
+    <ul> Submission system: https://submissions.e-a-a.org/eaa2026/login
+    <ul> Please select Session #211 when submitting your abstract.
+    <ul> Abstracts are evaluated by the EAA Programme Committee.
+    <ul> Full paper deadline (for accepted contributions): 1 August 2026.
 </li>
 
 Further information on the conference, sessions, and submission procedures:
 
 <li>
-    <ul>- https://www.e-a-a.org/EAA2026/EAA2026/Home.aspx
-    <br>- https://www.e-a-a.org/EAA2026/sessions
-    <br>- https://www.e-a-a.org/EAA2026/contributions
+    <ul> https://www.e-a-a.org/EAA2026/EAA2026/Home.aspx
+    <ul> https://www.e-a-a.org/EAA2026/sessions
+    <ul> https://www.e-a-a.org/EAA2026/contributions
 </li>
 ________________________________________
 
 **Session organisers**
 
-Costis Dallas (Vilnius University; Athena Research Centre, Greece)
-Chiara Bonacchi (University of Edinburgh, United Kingdom)
-Ingrida Kelpšienė (Vilnius University, Lithuania)
-John-Paul Martindale (University of Edinburgh, United Kingdom)
+<li>
+    <ul> Costis Dallas (Vilnius University; Athena Research Centre, Greece)
+    <ul> Chiara Bonacchi (University of Edinburgh, United Kingdom)
+    <ul> Ingrida Kelpšienė (Vilnius University, Lithuania)
+    <ul> John-Paul Martindale (University of Edinburgh, United Kingdom)
+</li>
