@@ -37,20 +37,20 @@ Against this backdrop, the session brings together empirical, methodological, an
 
 Details for submission are:
 
-<li>
-    <ul> Call for Contributions: 19 December – 5 February
-    <ul> Submission system: https://submissions.e-a-a.org/eaa2026/login
-    <ul> Please select Session #211 when submitting your abstract.
-    <ul> Abstracts are evaluated by the EAA Programme Committee.
-    <ul> Full paper deadline (for accepted contributions): 1 August 2026.
-</li>
+<ul>
+    <li> Call for Contributions: 19 December – 5 February </li>
+    <li> Submission system: https://submissions.e-a-a.org/eaa2026/login </li>
+    <li> Please select Session #211 when submitting your abstract. </li>
+    <li> Abstracts are evaluated by the EAA Programme Committee. </li>
+    <li> Full paper deadline (for accepted contributions): 1 August 2026. </li>
+</ul>
 
 Further information on the conference, sessions, and submission procedures:
 
 <ul>
-    <li> https://www.e-a-a.org/EAA2026/EAA2026/Home.aspx
-    <li> https://www.e-a-a.org/EAA2026/sessions
-    <li> https://www.e-a-a.org/EAA2026/contributions
+    <li> https://www.e-a-a.org/EAA2026/EAA2026/Home.aspx </li>
+    <li> https://www.e-a-a.org/EAA2026/sessions </li>
+    <li> https://www.e-a-a.org/EAA2026/contributions </li>
 </ul>
 ________________________________________
 
