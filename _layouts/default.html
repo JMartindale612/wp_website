@@ -1,0 +1,12 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  {% include head.html %}
+  <body class="is-preload{% if page.collection == 'posts' %} post-page{% endif %}">
+    <div id="page-wrapper">
+      {% include header.html %}
+      {{ content }}
+      {% include footer.html %}
+    </div>
+    {% include scripts.html %}
+  </body>
+</html>

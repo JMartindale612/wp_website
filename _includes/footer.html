@@ -1,0 +1,54 @@
+<footer id="site-footer" class="brand-footer">
+  <div class="footer-inner">
+    <div class="footer-col contact">
+      <p>
+        If you have any comments or questions please get in touch with the project team at
+        <a href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a>
+      </p>
+    </div>
+
+    <div class="footer-col follow">
+      <p class="heading">Follow us!</p>
+      <nav class="social" aria-label="Social media">
+        {% for social in site.data.social %}
+          <a class="social-link" href="{{ social.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ social.label }}">
+            {% if social.image %}
+              <span class="sr-only">{{ social.label }}</span>
+              <img src="{{ social.image | relative_url }}" alt="" aria-hidden="true">
+            {% else %}
+              <span class="{{ social.icon_class }}" aria-hidden="true"></span>
+            {% endif %}
+          </a>
+        {% endfor %}
+      </nav>
+    </div>
+
+    <div class="footer-col links">
+      <ul>
+        {% for item in site.data.navigation %}
+          {% if item.children %}
+            {% for child in item.children %}
+              <li><a href="{{ child.url | relative_url }}">{{ child.label }}</a></li>
+            {% endfor %}
+          {% else %}
+            <li><a href="{{ item.url | relative_url }}">{{ item.label }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-brandbar">
+    <div class="footer-logos">
+      {% for partner in site.data.partners %}
+        <div class="footer-col logo">
+          <img src="{{ partner.image | relative_url }}" alt="{{ partner.name }}" loading="lazy">
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="footer-meta">
+      <p>© {{ site.title }}. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

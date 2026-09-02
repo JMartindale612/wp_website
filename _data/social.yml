@@ -1,0 +1,11 @@
+- label: Bluesky
+  url: https://bsky.app/profile/weaponisedpasts.bsky.social
+  image: /assets/icons/bluesky.svg
+
+- label: X (Twitter)
+  url: https://x.com/WeaponisedPasts
+  icon_class: icon brands fa-twitter
+
+- label: LinkedIn
+  url: https://www.linkedin.com/company/108832533/
+  image: /assets/icons/linkedin.svg

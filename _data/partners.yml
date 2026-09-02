@@ -1,0 +1,8 @@
+- name: Leverhulme Trust
+  image: /images/leverhulme_w300.png
+
+- name: University of Edinburgh
+  image: /images/transparent_edinburgh_closer.png
+
+- name: University of Trento
+  image: /images/trento_w300.png

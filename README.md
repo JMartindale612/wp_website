@@ -21,16 +21,19 @@ publish the website.
 | `contact.html` | Contact and newsletter forms |
 | `news.html` | News landing page; Jekyll fills in the post list |
 | `_posts/` | Blog posts written in Markdown |
-| `_layouts/post.html` | Shared template for individual posts |
+| `_layouts/default.html` | Shared HTML document shell used by every page |
+| `_layouts/page.html` | Layout used by the five ordinary site pages |
+| `_layouts/post.html` | Article structure used by individual posts |
+| `_includes/` | Shared head, header, footer, and JavaScript markup |
+| `_data/navigation.yml` | Header and footer navigation links |
+| `_data/social.yml` | Social-media links and icons |
+| `_data/partners.yml` | Partner names, logos, and alternative text |
 | `_config.yml` | Site title, URL, post URLs, and Jekyll settings |
 | `images/` | Photographs, logos, and post images |
 | `assets/sass/main.scss` | Authoritative editable stylesheet source for now |
 | `assets/css/main.css` | CSS generated from `main.scss` |
 | `assets/js/` | HTML5 UP theme behaviour and supporting libraries |
 | `.vscode/` | VS Code tasks and project settings |
-
-Future structural work will introduce `_includes/` for shared headers and
-footers and `_data/` for information that should be edited in one place.
 
 ## One-time Windows setup
 
@@ -89,9 +92,17 @@ For links, use meaningful link text rather than a raw address or â€œclick hereâ€
 For informative images, add a concise description in the `alt` attribute.
 Decorative images may use `alt=""`.
 
-The header and footer are currently repeated across the HTML pages. Until they
-are centralized, a site-wide navigation or footer edit must be applied
-consistently to every affected page and `_layouts/post.html`.
+The root HTML files contain only page-specific content. Shared structure is
+maintained separately:
+
+- Edit `_data/navigation.yml` for header and footer navigation links.
+- Edit `_data/social.yml` for social accounts.
+- Edit `_data/partners.yml` for partner names and footer logos.
+- Edit `contact_email` in `_config.yml` for the project email address.
+- Edit `_includes/header.html` or `_includes/footer.html` only when their shared
+  markup needs to change.
+
+Every ordinary page and blog post receives this shared structure automatically.
 
 ## Edit or add a blog post
 

@@ -1,0 +1,15 @@
+<head>
+  <meta charset="utf-8">
+  {% if page.collection == "posts" %}
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="{{ '/images/favicon.png' | relative_url }}">
+  {% else %}
+    <title>{{ site.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  {% endif %}
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  {% if page.collection == "posts" %}
+    <noscript><link rel="stylesheet" href="{{ '/assets/css/noscript.css' | relative_url }}"></noscript>
+  {% endif %}
+</head>

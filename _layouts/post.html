@@ -1,77 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>{{ page.title }} | {{ site.title }}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+---
+layout: default
+---
+{% if page.hero_image %}
+<section class="hero">
+  <img class="hero__bg" src="{{ page.hero_image | relative_url }}" alt="">
+  <div class="hero__shade"></div>
+  <div class="hero__content"></div>
+</section>
+{% endif %}
 
-  <link rel="icon" href="{{ '/images/favicon.png' | relative_url }}">
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-  <noscript><link rel="stylesheet" href="{{ '/assets/css/noscript.css' | relative_url }}"></noscript>
-</head>
-<body class="is-preload post-page">
-  <div id="page-wrapper">
-
-    <!-- Header (same structure as news.html) -->
-    <header id="header">
-      <h1 class="logo">
-        <a href="{{ '/index.html' | relative_url }}">
-          <img src="{{ '/images/wp_logo_new_close.jpg' | relative_url }}" alt="">
-        </a>
-      </h1>
-      <nav id="nav">
-        <ul>
-          <li><a href="{{ '/index.html' | relative_url }}">Home</a></li>
-          <li>
-            <a href="#" class="icon solid fa-angle-down">About</a>
-            <ul>
-              <li><a href="{{ '/project.html' | relative_url }}">Project</a></li>
-              <li><a href="{{ '/people.html'  | relative_url }}">People</a></li>
-              <li><a href="{{ '/contact.html' | relative_url }}">Contact</a></li>
-            </ul>
-          </li>
-          <li><a href="{{ '/news/' | relative_url }}">News</a></li>
-        </ul>
-      </nav>
+<section id="main" class="container">
+  <section class="box post">
+    <header class="major" style="text-align:center">
+      <h2>{{ page.title }}</h2>
+      <p class="date">{{ page.date | date: "%-d %B %Y" }}</p>
     </header>
 
-    {% if page.hero_image %}
-    <section class="hero">
-       <img class="hero__bg" src="{{ page.hero_image | relative_url }}" alt="">
-       <div class="hero__shade"></div>
-       <div class="hero__content">
+    <div class="content">
+      {{ content }}
     </div>
-    </section>
-    {% endif %}
-
-    <!-- Main: centered white card -->
-    <section id="main" class="container">
-      <section class="box post">
-        <header class="major" style="text-align:center">
-          <h2>{{ page.title }}</h2>
-          <p class="date">{{ page.date | date: "%-d %B %Y" }}</p>
-        </header>
-
-        <div class="content">
-          {{ content }}
-        </div>
-      </section>
-    </section>
-
-    <!-- Footer (your existing footer) -->
-    <footer id="site-footer" class="brand-footer">
-      <!-- ... unchanged footer markup ... -->
-    </footer>
-
-  </div>
-
-  <!-- Scripts: include dropotron so the About dropdown works -->
-  <script src="{{ '/assets/js/jquery.min.js'              | relative_url }}"></script>
-  <script src="{{ '/assets/js/jquery.dropotron.min.js'    | relative_url }}"></script>
-  <script src="{{ '/assets/js/jquery.scrollex.min.js'     | relative_url }}"></script>
-  <script src="{{ '/assets/js/browser.min.js'             | relative_url }}"></script>
-  <script src="{{ '/assets/js/breakpoints.min.js'         | relative_url }}"></script>
-  <script src="{{ '/assets/js/util.js'                    | relative_url }}"></script>
-  <script src="{{ '/assets/js/main.js'                    | relative_url }}"></script>
-</body>
-</html>
+  </section>
+</section>

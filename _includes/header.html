@@ -1,0 +1,25 @@
+<header id="header">
+  <h1 class="logo">
+    <a href="{{ '/index.html' | relative_url }}" aria-label="Weaponised Pasts home">
+      {% unless page.header_logo == false %}
+        <img src="{{ '/images/wp_logo_new_close.jpg' | relative_url }}" alt="">
+      {% endunless %}
+    </a>
+  </h1>
+  <nav id="nav" aria-label="Primary navigation">
+    <ul>
+      {% for item in site.data.navigation %}
+        <li>
+          <a href="{{ item.url | relative_url }}"{% if item.children %} class="icon solid fa-angle-down"{% endif %}{% if page.nav_key == item.key %} aria-current="page"{% endif %}>{{ item.label }}</a>
+          {% if item.children %}
+            <ul>
+              {% for child in item.children %}
+                <li><a href="{{ child.url | relative_url }}"{% if page.subnav_key == child.key %} aria-current="page"{% endif %}>{{ child.label }}</a></li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</header>

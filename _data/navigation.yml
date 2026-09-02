@@ -1,0 +1,21 @@
+- label: Home
+  url: /index.html
+  key: home
+
+- label: About
+  url: /project.html
+  key: about
+  children:
+    - label: Project
+      url: /project.html
+      key: project
+    - label: People
+      url: /people.html
+      key: people
+    - label: Contact
+      url: /contact.html
+      key: contact
+
+- label: News
+  url: /news/
+  key: news
