@@ -1,0 +1,469 @@
+WEAPONISED PASTS WEBSITE: PROPOSED CHANGES
+==========================================
+
+Prepared: 2 September 2026
+
+Status labels
+-------------
+
+CORE: Recommended for implementation.
+OPTIONAL: Useful, but not necessary initially.
+CONTENT DECISION: Requires information or a choice from the project team.
+
+No item in this backlog authorises publication, deletion of images, URL changes,
+form submissions, domain changes, or computer-level software installation unless
+that action is separately approved.
+
+
+P0 - Establish a local preview
+================================
+
+P0.1 - Add a reproducible Jekyll environment
+
+- CORE: Add a Gemfile using the github-pages gem so local Jekyll matches GitHub Pages.
+- CORE: Include the Windows-compatible local-server dependency if required.
+- CORE: Generate and commit Gemfile.lock after a successful installation.
+- CORE: Confirm that the current repository builds without changing the rendered site.
+- CORE: Run the site locally with: bundle exec jekyll serve --livereload
+- CORE: Confirm that the local site opens at http://localhost:4000.
+- CORE: Verify the homepage, all four main pages, News, and all three posts.
+- CORE: Record differences between the local build and live site before proceeding.
+
+P0.2 - Install local prerequisites (computer-level setup)
+
+- CORE: Install Ruby with the Windows development tools.
+- CORE: Install Bundler.
+- CORE: Run bundle install in the repository.
+- CORE: Verify ruby --version, bundle --version, and the Jekyll build.
+- OPTIONAL: Configure Bundler to store project dependencies in vendor.
+- OPTIONAL: Create a VS Code terminal profile that opens in the repository.
+
+P0.3 - Add VS Code conveniences
+
+- CORE: Add .vscode/tasks.json with a Preview website task.
+- CORE: Add a Build website task for a non-serving Jekyll build.
+- CORE: Add .vscode/extensions.json recommending only required extensions.
+- OPTIONAL: Add a task for checking links and generated HTML.
+- OPTIONAL: Add a task for creating a post from a template.
+
+P0.4 - Add generated-file exclusions
+
+- CORE: Add .gitignore.
+- CORE: Ignore _site/.
+- CORE: Ignore .jekyll-cache/.
+- CORE: Ignore .sass-cache/.
+- CORE: Ignore local Bundler output if stored inside the project.
+- CORE: Ignore operating-system and editor temporary files.
+- CORE: Keep source images, posts, layouts, and required VS Code files tracked.
+
+
+P1 - Replace the README
+=======================
+
+P1.1 - Create a proper README.md
+
+- CORE: Replace the one-line README.txt with README.md.
+- CORE: Explain what Weaponised Pasts is.
+- CORE: Link to the live site.
+- CORE: Explain that the site uses Jekyll and GitHub Pages.
+- CORE: Explain that main is the production branch.
+- CORE: State that pushing to main triggers publication.
+- CORE: Record the custom domain and purpose of CNAME.
+
+P1.2 - Document the repository structure
+
+- CORE: Document _posts/ as Markdown blog posts.
+- CORE: Document _layouts/ as page templates.
+- CORE: Document _includes/ as future shared components.
+- CORE: Document _data/ as future central site information.
+- CORE: Document images/ as source images.
+- CORE: Document assets/sass/ as style sources.
+- CORE: Document assets/js/ as theme and custom JavaScript.
+- CORE: Document _config.yml as global Jekyll configuration.
+- CORE: Document the root HTML files as the main site pages.
+
+P1.3 - Document ordinary page editing
+
+- CORE: Explain how to edit Project, People, Contact, and Home.
+- CORE: Explain which information is shared and which belongs to one page.
+- CORE: Explain how to add a link.
+- CORE: Explain how to add an image with meaningful alternative text.
+- CORE: Warn against editing generated files.
+- CORE: Explain how to preview and verify a page.
+
+P1.4 - Document blog authoring
+
+- CORE: Explain the YYYY-MM-DD-post-title.md filename format.
+- CORE: Provide a complete front matter example.
+- CORE: Explain title, date, summary, hero_image, hero_alt, author, tags, and status.
+- CORE: Explain Markdown headings, links, lists, emphasis, and images.
+- CORE: Explain how to preview and publish a draft.
+- CORE: Explain how to mark an opportunity or event as expired.
+- CORE: Warn that renaming an existing post can change its public URL.
+
+P1.5 - Document the Git workflow
+
+- CORE: Document git status, git pull --ff-only, git diff, git add, git commit, and git push.
+- CORE: Explain what each command does.
+- CORE: Explain how to use VS Code's Source Control panel.
+- CORE: Explain that git push is sufficient because main tracks origin/main.
+- CORE: Explain how to check the GitHub Pages deployment.
+- CORE: Explain that a direct push to main affects production.
+- CORE: Warn against force-pushing.
+- CORE: Add troubleshooting for authentication, merge conflicts, failed builds, and caching.
+
+P1.6 - Document the stylesheet workflow
+
+- CORE: Identify the single authoritative Sass source.
+- CORE: Explain how CSS is built.
+- CORE: Remove ambiguity about editing main.scss versus main.css.
+- CORE: Explain how to check desktop and mobile layouts.
+
+
+P2 - Protect the current site before refactoring
+================================================
+
+- CORE: Record every current public URL.
+- CORE: Preserve all existing page and article URLs.
+- CORE: Capture reference screenshots at desktop and mobile widths.
+- CORE: Build the current site locally and retain temporary output for comparison.
+- CORE: Record navigation, footer, colours, typography, spacing, and logos.
+- CORE: Compare refactored output with the baseline.
+- CORE: Make separate commits for preview, layouts, blog changes, and cleanup.
+- CORE: Do not mix content rewriting with structural refactoring.
+- CORE: Do not push anything until its local build succeeds.
+- OPTIONAL: Work on a dedicated branch and merge into main after review.
+
+
+P3 - Centralize the shared site structure
+==========================================
+
+P3.1 - Create shared includes
+
+- CORE: Create _includes/head.html.
+- CORE: Create _includes/header.html.
+- CORE: Create _includes/footer.html.
+- CORE: Create _includes/scripts.html.
+- CORE: Move duplicated navigation into the shared header.
+- CORE: Move contact, social links, logos, and copyright into the shared footer.
+- CORE: Ensure posts and ordinary pages use exactly the same footer.
+- CORE: Ensure asset paths use Jekyll's relative_url filter.
+
+P3.2 - Create proper layouts
+
+- CORE: Create _layouts/default.html for the document shell.
+- CORE: Create _layouts/page.html for ordinary pages.
+- CORE: Refactor _layouts/post.html to extend the shared structure.
+- CORE: Remove duplicated document, head, navigation, scripts, and footer markup.
+- CORE: Add front matter to ordinary pages so Jekyll processes them.
+- CORE: Preserve existing filenames and URLs.
+- CORE: Preserve the current appearance during this structural step.
+
+P3.3 - Centralize site information
+
+- CORE: Add navigation information to _data/navigation.yml.
+- CORE: Add social links to _data/social.yml or _config.yml.
+- CORE: Store the project email in one location.
+- CORE: Store partner names, links, logos, and alt text in one location.
+- CORE: Generate the footer copyright year automatically.
+- OPTIONAL: Move team and adviser information into _data/people.yml.
+- OPTIONAL: Generate the People page from structured data.
+
+P3.4 - Improve navigation behaviour
+
+- CORE: Mark the current page with aria-current="page".
+- CORE: Replace inappropriate href="#" controls.
+- CORE: Make the About dropdown keyboard accessible.
+- CORE: Confirm the mobile navigation still works.
+- CORE: Give the linked logo an accessible name.
+- CORE: Add a skip-to-content link.
+- OPTIONAL: Replace the dropdown with direct visible links if it remains awkward.
+
+
+P4 - Repair and simplify the CSS
+=================================
+
+P4.1 - Remove conflicting rules
+
+- CORE: Consolidate the three competing .hero implementations.
+- CORE: Consolidate duplicated footer rules.
+- CORE: Consolidate duplicated logo-bar rules.
+- CORE: Consolidate duplicated adviser-table rules.
+- CORE: Remove overridden declarations that have no effect.
+- CORE: Reduce unnecessary !important usage.
+- CORE: Define each colour variable once.
+- CORE: Compare the cleaned stylesheet with baseline screenshots.
+
+P4.2 - Organize custom styles
+
+- CORE: Separate original HTML5 UP styles from project-specific styles.
+- CORE: Divide custom styles into named Sass partials for header, hero, cards,
+  people, posts, forms, and footer.
+- CORE: Comment non-obvious layout rules.
+- CORE: Centralize brand colours, spacing, widths, and breakpoints.
+- CORE: Remove speculative comments such as "adjust to taste".
+
+P4.3 - Use Jekyll to compile Sass
+
+- CORE: Make Jekyll the authoritative Sass compiler.
+- CORE: Put the Sass entry point where Jekyll expects it.
+- CORE: Configure the Sass source directory in _config.yml.
+- CORE: Stop relying on a VS Code extension for production CSS.
+- CORE: Stop tracking the generated source map.
+- CORE: Avoid manually editing compiled CSS.
+- CORE: Verify that local Jekyll and GitHub Pages produce the same stylesheet.
+
+
+P5 - Rebuild the blogging infrastructure
+==========================================
+
+P5.1 - Define a consistent post format
+
+- CORE: Standardize post front matter.
+- CORE: Require title, date, and summary.
+- CORE: Support hero_image and hero_alt.
+- CORE: Support author and tags.
+- CORE: Support a type such as news, event, vacancy, publication, or update.
+- CORE: Support an optional expiry date.
+- OPTIONAL: Support pinned or featured posts.
+- OPTIONAL: Support custom social-sharing images.
+
+P5.2 - Improve the News landing page
+
+- CORE: Replace the title-only list with accessible news cards.
+- CORE: Show hero thumbnail, title, date, summary, and Read more link.
+- CORE: Preserve reverse chronological ordering.
+- CORE: Handle posts without images.
+- CORE: Add an explicit empty state.
+- OPTIONAL: Highlight a featured story.
+- OPTIONAL: Add type filters.
+- OPTIONAL: Add a year archive when enough posts exist.
+
+P5.3 - Improve individual article pages
+
+- CORE: Restore the complete site footer.
+- CORE: Use one H1 for the article title.
+- CORE: Display date and author consistently.
+- CORE: Add Back to News and previous/next links.
+- CORE: Style headings, lists, links, quotations, and images consistently.
+- CORE: Support image captions.
+- CORE: Use an appropriate maximum reading width.
+- CORE: Ensure long titles and images work on mobile.
+- OPTIONAL: Display tags and related posts.
+
+P5.4 - Add drafts and a post template
+
+- CORE: Add _drafts/ and document draft previews.
+- CORE: Add a reusable post template.
+- CORE: Add a VS Code snippet or helper for date, slug, title, summary, hero,
+  alternative text, author, and tags.
+- CORE: Generate correctly named Markdown files.
+- CORE: Use lower-case hyphenated filenames for new posts.
+- CORE: Preserve existing underscore-containing URLs.
+
+P5.5 - Add blog discovery features
+
+- CORE: Add an RSS or Atom feed.
+- CORE: Expose the feed in the document head and News page.
+- CORE: Add search and social metadata.
+- OPTIONAL: Add tag pages and a yearly archive.
+
+P5.6 - Optional browser-based authoring
+
+- OPTIONAL: Add a Pages CMS .pages.yml configuration.
+- OPTIONAL: Configure CMS editing for _posts and safe image uploads.
+- OPTIONAL: Provide fields for standardized front matter.
+- OPTIONAL: Decide whether CMS edits update main or create branches.
+- OPTIONAL: Test using one draft article.
+
+
+P6 - Fix current defects
+=========================
+
+- CORE: Replace the placeholder post footer.
+- CORE: Supply a favicon or remove the broken reference.
+- CORE: Remove or supply the missing noscript.css.
+- CORE: Create the newsletter thanks.html destination or change the redirect.
+- CORE: Replace eight adviser placeholder links with real links or plain text.
+- CORE: Replace duplicate id="main" values on the People page.
+- CORE: Correct malformed image attributes and misspelled noopener values.
+- CORE: Add language attributes to every page.
+- CORE: Remove user-scalable=no.
+- CORE: Give each page a suitable browser title.
+- CORE: Fix the welcome post's excerpt marker capitalization.
+- CORE: Turn "subscribe here" into a real link.
+- CORE: Remove the duplicated EAA H1.
+- CORE: Convert EAA submission URLs into links.
+- CORE: Replace raw EAA HTML lists with valid Markdown lists.
+- CORE: Correct the unclosed organiser list item.
+- CORE: Check the repeated job-advertisement criterion against the intended copy.
+- CONTENT DECISION: Choose unchanged, expired banner, or archive for old opportunities.
+
+
+P7 - Accessibility improvements
+================================
+
+- CORE: Add descriptive alt text to informative images.
+- CORE: Use empty alt text only for decorative images.
+- CORE: Give the project logo an accessible name.
+- CORE: Correct heading hierarchy and use one H1 per page.
+- CORE: Add visible keyboard focus states.
+- CORE: Test navigation and the mobile menu without a mouse.
+- CORE: Verify colour contrast and 200 percent browser zoom.
+- CORE: Respect reduced-motion preferences.
+- CORE: Announce form errors and successes correctly.
+- CORE: Keep the adviser table understandable on small screens.
+- CORE: Add meaningful page landmarks.
+- OPTIONAL: Add an accessibility statement and automated accessibility audit.
+
+
+P8 - Forms and newsletter
+==========================
+
+- CORE: Keep contact and newsletter forms separate.
+- CORE: Preserve Formspree endpoint identifiers.
+- CORE: Move inline contact JavaScript into a maintainable JavaScript file.
+- CORE: Provide a functional no-JavaScript submission path.
+- CORE: Add a real success page and clear failure instructions.
+- CORE: Confirm spam traps are hidden accessibly.
+- CORE: Explain storage and use of newsletter addresses.
+- CORE: Link to an appropriate privacy notice.
+- CONTENT DECISION: Confirm form recipients and owners.
+- CONTENT DECISION: Decide how subscribers unsubscribe.
+- CONTENT DECISION: Decide whether confirmed opt-in is required.
+- OPTIONAL: Replace newsletter capture with a dedicated mailing-list provider.
+- SAFETY: Do not send form submissions without explicit permission.
+
+
+P9 - Image and media cleanup
+=============================
+
+P9.1 - Audit before removal
+
+- CORE: Produce referenced and apparently unused image lists.
+- CORE: Manually review approximately 87 apparently unused files.
+- CORE: Keep material intended for imminent use.
+- CORE: Delete only approved files.
+- CORE: Do not rewrite Git history merely to remove images.
+
+P9.2 - Standardize image files
+
+- CORE: Remove spaces and inconsistent capitalization when safe.
+- CORE: Avoid HEIC for web publication.
+- CORE: Convert required HEIC files to browser-friendly formats.
+- CORE: Use descriptive filenames.
+- CORE: Do not change published image URLs without updating all references.
+- CORE: Organize blog images consistently.
+- OPTIONAL: Add an image-attribution record.
+
+P9.3 - Improve performance
+
+- CORE: Resize and compress large images.
+- CORE: Use WebP where it meaningfully reduces size.
+- CORE: Add image width and height metadata.
+- CORE: Lazy-load below-the-fold images, but not the visible hero.
+- OPTIONAL: Generate responsive srcset variants.
+- OPTIONAL: Replace suitable logo PNGs with SVG files.
+
+
+P10 - Repository cleanup
+=========================
+
+- CORE: Remove or exclude elements.html.
+- CORE: Remove printit.txt, which contains an obsolete local path listing.
+- CORE: Rename README.txt to README.md.
+- CORE: Correct _config.yml exclusions for actual filenames.
+- CORE: Decide whether LICENSE.txt should remain publicly available.
+- CORE: Remove broken references from elements.html if it is retained.
+- CORE: Remove unused image and template assets only after verification.
+- CORE: Add .editorconfig.
+- CORE: Normalize malformed HTML attributes.
+- CORE: Keep CNAME unchanged.
+- OPTIONAL: Separate third-party theme code from project code.
+- OPTIONAL: Add a third-party asset and licence inventory.
+
+
+P11 - Search, sharing, and metadata
+===================================
+
+- CORE: Give every page a unique title and meaningful description.
+- CORE: Add canonical URLs.
+- CORE: Add Open Graph and social-sharing metadata.
+- CORE: Add a project favicon.
+- CORE: Add a sitemap, feed discovery, and robots.txt.
+- CORE: Set the site language.
+- CORE: Add basic organisation or project structured data.
+- OPTIONAL: Add article structured data.
+- OPTIONAL: Add a default branded social card.
+
+
+P12 - JavaScript and dependency cleanup
+=========================================
+
+- CORE: Determine which HTML5 UP JavaScript libraries remain necessary.
+- CORE: Remove unused scripts.
+- CORE: Fix leaked variables in util.js.
+- CORE: Move custom JavaScript out of HTML pages.
+- CORE: Add defer where compatible.
+- CORE: Use noopener noreferrer for new-tab links.
+- CORE: Review bundled jQuery and theme compatibility.
+- OPTIONAL: Update jQuery and retest the menu.
+- OPTIONAL: Replace the jQuery-dependent menu with focused modern JavaScript.
+- OPTIONAL: Self-host Inter or use a system-font stack.
+- OPTIONAL: Reduce bundled Font Awesome files to the formats and icons used.
+
+
+P13 - Automated validation
+===========================
+
+P13.1 - Local checks
+
+- CORE: Add a clean Jekyll build command.
+- CORE: Add generated-HTML validation.
+- CORE: Add internal-link and missing-asset checks.
+- CORE: Check required post front matter.
+- CORE: Check duplicate IDs and broken image references.
+- CORE: Check published-post image alt text where needed.
+
+P13.2 - GitHub checks
+
+- CORE: Add GitHub Actions validation on pull requests and pushes.
+- CORE: Fail when Jekyll cannot build or internal files are missing.
+- CORE: Keep deployment separate from validation.
+- OPTIONAL: Run scheduled external-link checks.
+- OPTIONAL: Add accessibility and Lighthouse checks.
+- OPTIONAL: Require validation before merging into main.
+
+P13.3 - Visual checks
+
+- CORE: Create a checklist for all pages, desktop, mobile, keyboard, and forms.
+- OPTIONAL: Add screenshot regression tests once the structure stabilizes.
+
+
+P14 - Content review
+=====================
+
+- CONTENT DECISION: Mark the EAA call as expired.
+- CONTENT DECISION: Mark the postdoctoral vacancy as closed or archived.
+- CONTENT DECISION: Confirm team roles and affiliations.
+- CONTENT DECISION: Supply adviser profile links.
+- CONTENT DECISION: Confirm whether Twitter should be labelled X.
+- CONTENT DECISION: Confirm social accounts and the contact email.
+- CONTENT DECISION: Review the promise of regular updates.
+- CONTENT DECISION: Review current project terminology.
+- CONTENT DECISION: Add required image credits.
+- CONTENT DECISION: Add privacy and accessibility statements.
+- CONTENT DECISION: Decide the correct copyright holder.
+
+
+Suggested implementation order
+===============================
+
+Batch A: P0-P2 - preview, README, Git instructions, and baseline.
+Batch B: P3-P4 - shared layouts and CSS cleanup without redesign.
+Batch C: P5-P6 - blogging infrastructure and current defect fixes.
+Batch D: P7-P8 - accessibility and forms.
+Batch E: P9-P12 - images, repository cleanup, metadata, and dependencies.
+Batch F: P13 - automated validation.
+Batch G: P14 - separately approved content changes.
+Optional final batch: Pages CMS and other optional features.

@@ -11,9 +11,18 @@ excerpt_separator: "<!-- more -->"
 
 # Keep your repo tidy on GH Pages builds:
 exclude:
+  - .bundle
+  - .jekyll-cache
+  - .sass-cache
   - node_modules
   - package.json
   - package-lock.json
   - .vscode
+  - "Codex changes.txt"
+  - docs
+  - Gemfile
+  - Gemfile.lock
   - README
+  - README.md
   - LICENSE
+  - vendor

@@ -1,0 +1,15 @@
+# Jekyll output and caches
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+
+# Local Bundler files
+.bundle/
+vendor/bundle/
+
+# Logs and operating-system files
+*.log
+.DS_Store
+Thumbs.db
+Desktop.ini

@@ -66,7 +66,8 @@ title: News
 					</section>
 				  
 					<div class="inner post-list">
-						{% for post in site.posts | sort: "date" | reverse %}
+						{% assign posts_by_date = site.posts | sort: "date" | reverse %}
+						{% for post in posts_by_date %}
 						  <h3 class="post-list__item">
 							<a href="{{ post.url | relative_url }}">{{ post.title }}</a>
 							<span class="date">— {{ post.date | date: "%-d %B %Y" }}</span>
