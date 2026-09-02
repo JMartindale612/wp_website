@@ -10,6 +10,10 @@ markdown: kramdown
 timezone: Europe/London
 excerpt_separator: "<!-- more -->"
 
+sass:
+  sass_dir: assets/sass
+  style: expanded
+
 # Keep your repo tidy on GH Pages builds:
 exclude:
   - .bundle
