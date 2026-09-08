@@ -30,8 +30,9 @@ publish the website.
 | `_data/partners.yml` | Partner names, logos, and alternative text |
 | `_config.yml` | Site title, URL, post URLs, and Jekyll settings |
 | `images/` | Photographs, logos, and post images |
-| `assets/sass/main.scss` | Authoritative editable stylesheet source for now |
-| `assets/css/main.css` | CSS generated from `main.scss` |
+| `assets/sass/main.scss` | Original HTML5 UP theme and project-style imports |
+| `assets/sass/project/` | Editable Weaponised Pasts styles, divided by component |
+| `assets/css/main.scss` | Jekyll Sass entry point; normally does not need editing |
 | `assets/js/` | HTML5 UP theme behaviour and supporting libraries |
 | `.vscode/` | VS Code tasks and project settings |
 
@@ -169,25 +170,29 @@ bundle exec jekyll serve --livereload --drafts
 
 ## Edit styles
 
-The current repository contains a Sass source file and its previously compiled
-CSS. The Sass source is authoritative:
+Weaponised Pasts styles are organised by component in:
 
 ```text
-assets/sass/main.scss
+assets/sass/project/
 ```
 
-The compiled files used by the browser are:
+The component files cover design tokens, general page rules, the header, heroes,
+cards, people, posts, forms, and the footer. Edit the most relevant component
+rather than adding another version of the same rule to `main.scss`.
+
+`assets/sass/main.scss` retains the original HTML5 UP theme and imports the
+project components. `assets/css/main.scss` is the entry point Jekyll processes.
+When the preview or build runs, Jekyll automatically creates:
 
 ```text
-assets/css/main.css
-assets/css/main.css.map
+_site/assets/css/main.css
 ```
 
-The repository does not yet contain a reproducible Sass build configuration, so
-avoid stylesheet changes during Batch A. Do not edit `main.css` independently:
-a later Sass compilation would overwrite it. Batch B will make Jekyll compile
-the Sass source and will document the replacement workflow before style changes
-are made.
+Do not manually create or edit `assets/css/main.css`; generated CSS and source
+maps are ignored by Git. After changing a project partial, save it and check the
+local preview at both desktop and mobile widths. Jekyll normally regenerates the
+stylesheet automatically. If `_config.yml` changes, stop the preview with
+`Ctrl+C` and start it again so the new configuration is loaded.
 
 ## Safe Git workflow
 

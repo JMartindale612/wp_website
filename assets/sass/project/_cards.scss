@@ -1,0 +1,72 @@
+/* Keep homepage cards equal in height and their actions aligned. */
+#main .row > [class*="col-"] {
+	display: flex;
+}
+
+#main .row > [class*="col-"] > .box.special {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+#main .box.special {
+	margin-top: 0;
+
+	.actions {
+		margin-top: auto;
+	}
+
+	.image.featured {
+		aspect-ratio: 16 / 9;
+		overflow: hidden;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+			display: block;
+		}
+	}
+}
+
+#main > .box.special:first-child,
+.container > .box.special:first-child,
+body.landing #main > .box.special:first-child,
+body.landing .container > .box.special:first-child {
+	margin-top: 0 !important;
+}
+
+.actions.special .button.alt,
+.button.alt {
+	background: $brand-button-red;
+	color: #fff !important;
+	border: 0;
+	box-shadow: none;
+}
+
+.button.alt:hover {
+	background: #a23a28;
+}
+
+.button.alt:active {
+	background: #7f2a1d;
+}
+
+.box figure {
+	margin: 0;
+	text-align: center;
+
+	img {
+		display: inline-block;
+		max-width: 100%;
+		height: auto;
+	}
+
+	figcaption {
+		margin-top: 0.75rem;
+		font-style: italic;
+		opacity: 0.85;
+		text-align: center;
+	}
+}

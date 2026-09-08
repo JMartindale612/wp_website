@@ -1,0 +1,15 @@
+/* Weaponised Pasts design tokens. */
+$brand-black: #171b14;
+$brand-cream: #f2e9da;
+$brand-header: #f4e7dc;
+$brand-red: #933222;
+$brand-button-red: #942811;
+$brand-navy: #37464f;
+$brand-footer-cream: #efe5d8;
+
+:root {
+	--header-height: 60px;
+	--brand-red: #{$brand-red};
+	--brand-header: #{$brand-header};
+	--brand-navy: #{$brand-navy};
+}
