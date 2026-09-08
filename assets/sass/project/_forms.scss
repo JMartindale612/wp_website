@@ -16,7 +16,8 @@
 		}
 	}
 
-	input[type="submit"] {
+	input[type="submit"],
+	button {
 		background: #fff;
 		color: var(--brand-red);
 		border-color: #fff;
@@ -25,6 +26,25 @@
 			background: #f7f7f7;
 			color: var(--brand-red);
 		}
+	}
+
+	a {
+		color: #fff;
+		font-weight: 600;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+	}
+
+	> p,
+	.newsletter-privacy {
+		max-width: 52rem;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.newsletter-privacy {
+		margin-top: 1rem;
+		font-size: 0.92rem;
 	}
 }
 
@@ -39,9 +59,9 @@
 	grid-row-gap: 1rem;
 	align-items: center;
 
-	h4 {
+	label {
 		margin: 0;
-		font-size: 1.25rem;
+		font-size: 1.05rem;
 		font-weight: 600;
 	}
 
@@ -55,7 +75,7 @@
 		width: 100%;
 	}
 
-	.field-message h4 {
+	.field-message label {
 		grid-column: 1 / -1;
 		text-align: center;
 		margin-top: 0.5rem;
@@ -63,8 +83,15 @@
 
 	.field-message textarea,
 	.consent,
+	.form-privacy,
 	.actions {
 		grid-column: 1 / -1;
+	}
+
+	.form-privacy {
+		margin: 0;
+		font-size: 0.95rem;
+		text-align: center;
 	}
 
 	.actions {
@@ -96,12 +123,20 @@
 	left: -50000px !important;
 	width: 1px;
 	height: 1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
 	opacity: 0;
 }
 
 .status {
 	margin: 0.5rem 0 0;
 	font-size: 0.95rem;
+}
+
+.status--error {
+	color: #9d2519;
+	font-weight: 600;
 }
 
 .form-card {
@@ -138,14 +173,38 @@
 
 	input:focus,
 	textarea:focus {
-		outline: none;
 		border-color: #243741;
 		box-shadow: 0 0 0 3px rgba(36, 55, 65, 0.12);
 	}
 
-	input:invalid,
-	textarea:invalid {
+	input:user-invalid,
+	textarea:user-invalid {
 		border-color: #c23a2b;
 		box-shadow: none;
+	}
+}
+
+@media (max-width: 640px) {
+	.form-grid {
+		display: block;
+
+		.field,
+		.consent,
+		.form-privacy,
+		.actions {
+			margin-bottom: 1rem;
+		}
+
+		.field {
+			display: block;
+		}
+
+		.field-message label {
+			text-align: left;
+		}
+
+		.actions {
+			flex-direction: column;
+		}
 	}
 }

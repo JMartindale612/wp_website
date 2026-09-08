@@ -10,6 +10,36 @@ body {
 	scroll-padding-top: var(--header-height);
 }
 
+.skip-link {
+	position: fixed;
+	top: 0.5rem;
+	left: 0.5rem;
+	z-index: 10000;
+	padding: 0.65rem 0.9rem;
+	background: #fff;
+	color: $brand-black;
+	border: 2px solid $brand-black;
+	border-radius: 0.25rem;
+	transform: translateY(-150%);
+	transition: transform 0.15s ease;
+
+	&:focus {
+		transform: translateY(0);
+	}
+}
+
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+	outline: 3px solid #145d8f;
+	outline-offset: 3px;
+}
+
+#header :where(a, button):focus-visible,
+#site-footer :where(a, button):focus-visible,
+#cta :where(a, button, input):focus-visible {
+	outline-color: #fff;
+	box-shadow: 0 0 0 2px #145d8f;
+}
+
 /* The fixed header sits outside the normal document flow. */
 #page-wrapper {
 	padding-top: var(--header-height);
@@ -17,6 +47,10 @@ body {
 
 #main {
 	padding-top: 0 !important;
+}
+
+header.major p {
+	color: #4f5960;
 }
 
 .sr-only {
@@ -33,4 +67,27 @@ body {
 
 .muted {
 	opacity: 0.7;
+}
+
+.page-introduction {
+	margin: 0 !important;
+	padding: 0 !important;
+	border-top: 0 !important;
+	font-size: 1.1rem;
+	line-height: 1.6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto !important;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
 }

@@ -5,3 +5,6 @@
 <script src="{{ '/assets/js/breakpoints.min.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/util.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+{% if page.custom_script %}
+<script src="{{ page.custom_script | relative_url }}" defer></script>
+{% endif %}

@@ -30,7 +30,53 @@
 
 	// Dropdowns.
 		$('#nav > ul').dropotron({
-			alignment: 'right'
+			alignment: 'right',
+			detach: false,
+			hoverDelay: 100
+		});
+
+		$('#nav > ul > li > ul').each(function() {
+			var $menu = $(this),
+				$opener = $menu.parent().children('a').first();
+
+			$opener
+				.attr('aria-haspopup', 'true')
+				.attr('aria-expanded', 'false')
+				.on('focus', function() {
+					$menu.trigger('doExpand');
+				})
+				.on('keydown', function(event) {
+					if (event.key === 'Escape') {
+						$menu.trigger('doCollapse');
+						$opener.trigger('focus');
+					}
+				});
+
+			$menu
+				.attr('aria-label', $.trim($opener.text()))
+				.on('doExpand.accessibility', function() {
+					$opener.attr('aria-expanded', 'true');
+				})
+				.on('doCollapse.accessibility', function() {
+					$opener.attr('aria-expanded', 'false');
+				});
+		});
+
+		$('#nav > ul > li > a').on('focus', function() {
+			var currentMenu = $(this).siblings('ul').get(0);
+			$('#nav > ul > li > ul').each(function() {
+				if (this !== currentMenu) {
+					$(this).trigger('doCollapse');
+				}
+			});
+		});
+
+		$('#nav').on('focusout', function() {
+			window.setTimeout(function() {
+				if (!$.contains(document.getElementById('nav'), document.activeElement)) {
+					$('#nav > ul').trigger('doCollapseAll');
+				}
+			}, 0);
 		});
 
 	// NavPanel.
@@ -38,7 +84,7 @@
 		// Button.
 			$(
 				'<div id="navButton">' +
-					'<a href="#navPanel" class="toggle"></a>' +
+					'<a href="#navPanel" class="toggle" aria-label="Open navigation" aria-controls="navPanel"><span class="sr-only">Open navigation</span></a>' +
 				'</div>'
 			)
 				.appendTo($body);
@@ -55,6 +101,7 @@
 				.panel({
 					delay: 500,
 					hideOnClick: true,
+					hideOnEscape: true,
 					hideOnSwipe: true,
 					resetScroll: true,
 					resetForms: true,

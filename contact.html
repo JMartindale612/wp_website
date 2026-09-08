@@ -4,152 +4,93 @@ title: Contact
 permalink: /contact.html
 nav_key: about
 subnav_key: contact
+custom_script: /assets/js/contact.js
 ---
 
-<section class="hero">
-					<!-- Background image (blurred via CSS) -->
-					<img class="hero__bg" src="images/efi_high-res.jpg" alt="" aria-hidden="true">
-				
-					<!-- Optional brand tint -->
-					<div class="hero__shade"></div>
-				
-					<!-- Text overlay -->
-					<div class="hero__content">
-					<h1>Contact</h1>
-					</div>
-				</section>
-			
+<section class="hero" aria-labelledby="contact-title">
+	<img class="hero__bg" src="{{ '/images/efi_high-res.jpg' | relative_url }}" alt="" aria-hidden="true">
+	<div class="hero__shade" aria-hidden="true"></div>
+	<div class="hero__content">
+		<h1 id="contact-title">Contact</h1>
+	</div>
+</section>
 
-			<!-- Main -->
-			<section id = "main" class = "container">
-					<section class="box special">
-						<header class="major">
-							<h4>Inclusive, public archaeology is extremely important to us 
-								and we would love to hear your perception and interpretation of our work.
-							</h4>
-							<h4>Get in touch, and sign up below with your email address to receive
-								news and updates.
-							</h4>
-						</header>
-					</section>
-				
-					<section class="box form-card">
-						<form id="contact-form"
-							  action="https://formspree.io/f/mldpnbpy"
-							  method="POST" accept-charset="UTF-8"
-							  class="contact-form form-grid">
-					  
-						  <!-- Name -->
-						  <div class="field">
-							<h4><label for="name">Name</label></h4>
-							<input type="text" id="name" name="name" required autocomplete="name">
-						  </div>
-					  
-						  <!-- Email -->
-						  <div class="field">
-							<h4><label for="email">Email</label></h4>
-							<input type="email" id="email" name="email" required autocomplete="email">
-						  </div>
-					  
-						  <!-- Organisation -->
-						  <div class="field">
-							<h4><label for="organisation">Organisation <span class="muted">(optional)</span></label></h4>
-							<input type="text" id="organisation" name="organisation" autocomplete="organization">
-						  </div>
-					  
-						  <!-- Message (label centered, textarea full width) -->
-						  <div class="field field-message">
-							<h4><label for="message">Message</label></h4>
-							<textarea id="message" name="message" rows="7" required></textarea>
-						  </div>
-					  
-						  <!-- Consent -->
-						  <div class="consent">
-							<input type="checkbox" id="consent" name="consent" required>
-							<label for="consent">
-							  I consent to the Weaponised Pasts team storing and using my details to respond to this enquiry.
-							</label>
-						  </div>
-					  
-						  <!-- Helpers -->
-						  <input type="hidden" name="_subject" value="New message from Weaponised Pasts">
-						  <input type="text" name="_gotcha" class="hp" autocomplete="off">
-						  <input type="hidden" name="page" value="contact.html">
-					  
-						  <!-- Submit -->
-						  <div class="actions">
-							<button type="submit" class="btn-navy">Send</button>
-							<p id="form-status" role="status" aria-live="polite" class="status"></p>
-						  </div>
-						</form>
-					  </section>
-		  
-				  <style>
-					/* Hide honeypot */
-					.hp{position:absolute!important;left:-50000px!important;height:0!important;width:0!important;opacity:0!important}
-					/* Optional: make the form look like your theme’s forms, if needed */
-					.contact-form label{display:block;margin-bottom:.35rem}
-					.contact-form input[type="text"],
-					.contact-form input[type="email"],
-					.contact-form textarea{width:100%}
-				  </style>
-		  
-		  <script>
-			const form = document.getElementById('contact-form');
-			const statusEl = document.getElementById('form-status');
-		  
-			form.addEventListener('submit', async (e) => {
-			  e.preventDefault();
-		  
-			  /* NEW: if the form has invalid fields, show the browser’s messages
-				 and STOP (don’t try to send). */
-			  if (!form.checkValidity()) {
-				form.reportValidity();
-				return;
-			  }
-		  
-			  statusEl.textContent = 'Sending…';
-			  try {
-				const resp = await fetch(form.action, {
-				  method: 'POST',
-				  body: new FormData(form),
-				  headers: { 'Accept': 'application/json' }
-				});
-		  
-				if (resp.ok) {
-				  statusEl.textContent = 'Thanks — your message was sent.';
-				  form.reset();
-				} else {
-				  const j = await resp.json().catch(() => ({}));
-				  statusEl.textContent = j.errors
-					? j.errors.map(err => err.message).join(', ')
-					: 'Sorry, something went wrong. Please try again or email {{ site.contact_email }}.';
-				}
-			  } catch {
-				statusEl.textContent = 'Network error — please try again or email {{ site.contact_email }}.';
-			  }
-			});
-		  </script>		  
+<main id="main" class="container">
+	<section class="box special" aria-labelledby="contact-introduction">
+		<header class="major">
+			<h2 id="contact-introduction">Get in touch</h2>
+			<p>Inclusive, public archaeology is extremely important to us, and we would love to hear your perception and interpretation of our work.</p>
+			<p>Send the project team a message, or sign up below to receive news and updates.</p>
+		</header>
+	</section>
 
-			</section>
+	<section class="box form-card" aria-labelledby="contact-form-title">
+		<h2 id="contact-form-title">Send us a message</h2>
+		<form id="contact-form"
+			  action="https://formspree.io/f/mldpnbpy"
+			  method="POST"
+			  accept-charset="UTF-8"
+			  class="contact-form form-grid"
+			  data-contact-email="{{ site.contact_email }}">
+			<div class="field">
+				<label for="name">Name</label>
+				<input type="text" id="name" name="name" required autocomplete="name">
+			</div>
 
-				<section id="cta">
-					<h2>Sign up for project updates</h2>
-					<form action="https://formspree.io/f/mrbykqjk" method="POST">
-					  <!-- Optional: set a subject and a redirect after submit -->
-					  <input type="hidden" name="_subject" value="New newsletter subscriber">
-					  <input type="hidden" name="_redirect" value="https://weaponisedpasts.org/thanks.html#subscribed">
-					  <!-- Spam trap -->
-					  <input type="text" name="_gotcha" style="display:none">
-				  
-					  <div class="row gtr-50 gtr-uniform">
-						<div class="col-8 col-12-mobilep">
-						  <label class="sr-only" for="sub-email">Email</label>
-						  <input type="email" name="email" id="sub-email" placeholder="Email Address" required>
-						</div>
-						<div class="col-4 col-12-mobilep">
-						  <button type="submit" class="fit">Sign Up</button>
-						</div>
-					  </div>
-					</form>
-				  </section>
+			<div class="field">
+				<label for="email">Email</label>
+				<input type="email" id="email" name="email" required autocomplete="email">
+			</div>
+
+			<div class="field">
+				<label for="organisation">Organisation <span class="muted">(optional)</span></label>
+				<input type="text" id="organisation" name="organisation" autocomplete="organization">
+			</div>
+
+			<div class="field field-message">
+				<label for="message">Message</label>
+				<textarea id="message" name="message" rows="7" required></textarea>
+			</div>
+
+			<div class="consent">
+				<input type="checkbox" id="consent" name="consent" value="yes" required>
+				<label for="consent">
+					I consent to the Weaponised Pasts team storing and using my details to respond to this enquiry.
+				</label>
+			</div>
+
+			<p class="form-privacy">See our <a href="{{ '/privacy.html' | relative_url }}">privacy notice</a> for how your information is handled.</p>
+
+			<input type="hidden" name="_subject" value="New message from Weaponised Pasts">
+			<input type="hidden" name="_redirect" value="https://weaponisedpasts.org/thanks.html#contact-sent">
+			<input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+			<input type="hidden" name="page" value="contact.html">
+
+			<div class="actions">
+				<button type="submit" class="btn-navy">Send</button>
+				<p id="form-status" role="status" aria-live="polite" aria-atomic="true" class="status" tabindex="-1"></p>
+			</div>
+		</form>
+	</section>
+
+	<section id="cta" aria-labelledby="newsletter-title">
+		<h2 id="newsletter-title">Sign up for project updates</h2>
+		<p>We will use your email address only to send Weaponised Pasts news and updates. You can unsubscribe at any time by emailing <a href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a>.</p>
+		<form action="https://formspree.io/f/mrbykqjk" method="POST">
+			<input type="hidden" name="_subject" value="New newsletter subscriber">
+			<input type="hidden" name="_redirect" value="https://weaponisedpasts.org/thanks.html#subscribed">
+			<input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+			<div class="row gtr-50 gtr-uniform">
+				<div class="col-8 col-12-mobilep">
+					<label class="sr-only" for="sub-email">Email address</label>
+					<input type="email" name="email" id="sub-email" placeholder="Email address" required autocomplete="email" aria-describedby="newsletter-privacy">
+				</div>
+				<div class="col-4 col-12-mobilep">
+					<button type="submit" class="fit">Sign up</button>
+				</div>
+			</div>
+			<p id="newsletter-privacy" class="newsletter-privacy">By signing up, you agree to our <a href="{{ '/privacy.html' | relative_url }}">privacy notice</a>.</p>
+		</form>
+	</section>
+</main>
