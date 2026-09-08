@@ -44,6 +44,79 @@
         "panel": "dedicated",
         "clear": true
       }
+    },
+    {
+      "label": "Website: preview drafts",
+      "type": "shell",
+      "command": "bundle",
+      "args": [
+        "exec",
+        "jekyll",
+        "serve",
+        "--livereload",
+        "--drafts"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      "label": "Website: create draft post",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}\\tools\\new-post.ps1",
+        "-Title",
+        "${input:postTitle}",
+        "-Summary",
+        "${input:postSummary}",
+        "-Type",
+        "${input:postType}"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "id": "postTitle",
+      "type": "promptString",
+      "description": "Post title"
+    },
+    {
+      "id": "postSummary",
+      "type": "promptString",
+      "description": "One- or two-sentence News page summary"
+    },
+    {
+      "id": "postType",
+      "type": "pickString",
+      "description": "Post type",
+      "options": [
+        "update",
+        "news",
+        "event",
+        "vacancy",
+        "publication"
+      ],
+      "default": "update"
     }
   ]
 }

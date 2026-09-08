@@ -2,11 +2,17 @@
 layout: post
 title: "Call for Contributions - EAA 2026"
 date: 2025-12-19
-hero_image: /images/athens_2.jpg  # optional
-# summary: "What we’ll publish here and how to follow along."  # optional (used on index)
+summary: "Call for contributions to our EAA 2026 session on archaeological heritage, identity and contestation on social media."
+description: "Call for contributions to our EAA 2026 session on archaeological heritage, identity and contestation on social media."
+hero_image: /images/athens_2.jpg
+hero_alt: "The Acropolis illuminated above Athens at dusk"
+author: "Weaponised Pasts team"
+type: event
+tags:
+  - conference
+  - call for contributions
+status: published
 ---
-
-# Call for Contributions
 
 We are delighted to announce that our session **“Archaeological Heritage on Social Media: Identity Nexus, Contact Zone, or Battlefield?”** has been accepted at the 32nd Annual Meeting of the European Association of Archaeologists (EAA 2026) in Athens next year.
 
@@ -37,28 +43,23 @@ Against this backdrop, the session brings together empirical, methodological, an
 
 Details for submission are:
 
-<ul>
-    <li> Call for Contributions: 19 December – 5 February </li>
-    <li> Submission system: https://submissions.e-a-a.org/eaa2026/login </li>
-    <li> Please select Session #211 when submitting your abstract. </li>
-    <li> Abstracts are evaluated by the EAA Programme Committee. </li>
-    <li> Full paper deadline (for accepted contributions): 1 August 2026. </li>
-</ul>
+- Call for Contributions: 19 December–5 February
+- Submission system: [EAA 2026 submissions](https://submissions.e-a-a.org/eaa2026/login)
+- Please select Session #211 when submitting your abstract.
+- Abstracts are evaluated by the EAA Programme Committee.
+- Full paper deadline (for accepted contributions): 1 August 2026.
 
 Further information on the conference, sessions, and submission procedures:
 
-<ul>
-    <li> https://www.e-a-a.org/EAA2026/EAA2026/Home.aspx </li>
-    <li> https://www.e-a-a.org/EAA2026/sessions </li>
-    <li> https://www.e-a-a.org/EAA2026/contributions </li>
-</ul>
-________________________________________
+- [EAA 2026 conference website](https://www.e-a-a.org/EAA2026/EAA2026/Home.aspx)
+- [EAA 2026 sessions](https://www.e-a-a.org/EAA2026/sessions)
+- [EAA 2026 contributions](https://www.e-a-a.org/EAA2026/contributions)
+
+---
 
 **Session organisers**
 
-<ul>
-    <li> Costis Dallas (Vilnius University; Athena Research Centre, Greece)
-    <li> Chiara Bonacchi (University of Edinburgh, United Kingdom)
-    <li> Ingrida Kelpšienė (Vilnius University, Lithuania)
-    <li> John-Paul Martindale (University of Edinburgh, United Kingdom)
-</ul>
+- Costis Dallas (Vilnius University; Athena Research Centre, Greece)
+- Chiara Bonacchi (University of Edinburgh, United Kingdom)
+- Ingrida Kelpšienė (Vilnius University, Lithuania)
+- John-Paul Martindale (University of Edinburgh, United Kingdom)

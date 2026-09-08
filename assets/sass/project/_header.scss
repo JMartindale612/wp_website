@@ -19,6 +19,10 @@
 	.logo {
 		margin: 0;
 		height: var(--header-height);
+		left: 1.25em;
+		padding: 0;
+		position: absolute;
+		top: 0;
 
 		a {
 			display: flex;

@@ -21,6 +21,7 @@ publish the website.
 | `contact.html` | Contact and newsletter forms |
 | `news.html` | News landing page; Jekyll fills in the post list |
 | `_posts/` | Blog posts written in Markdown |
+| `_drafts/` | Unpublished posts shown only with the drafts preview option |
 | `_layouts/default.html` | Shared HTML document shell used by every page |
 | `_layouts/page.html` | Layout used by the five ordinary site pages |
 | `_layouts/post.html` | Article structure used by individual posts |
@@ -34,6 +35,8 @@ publish the website.
 | `assets/sass/project/` | Editable Weaponised Pasts styles, divided by component |
 | `assets/css/main.scss` | Jekyll Sass entry point; normally does not need editing |
 | `assets/js/` | HTML5 UP theme behaviour and supporting libraries |
+| `templates/post-template.md` | Reusable manual template for a new article |
+| `tools/new-post.ps1` | Helper used by VS Code to create a correctly named post |
 | `.vscode/` | VS Code tasks and project settings |
 
 ## One-time Windows setup
@@ -107,7 +110,12 @@ Every ordinary page and blog post receives this shared structure automatically.
 
 ## Edit or add a blog post
 
-Posts live in `_posts/` and follow this filename pattern:
+The simplest way to begin is **Terminal → Run Task → Website: create draft
+post**. VS Code asks for the title, News-page summary, and type, then creates a
+correctly structured Markdown file in `_drafts/`. A reusable manual version is
+also available at `templates/post-template.md`.
+
+Published posts live in `_posts/` and follow this filename pattern:
 
 ```text
 YYYY-MM-DD-short-lowercase-title.md
@@ -127,17 +135,26 @@ layout: post
 title: "Project update"
 date: 2026-09-02
 summary: "A short introduction for the News page."
+description: "Repeat the summary for search and social metadata."
 hero_image: /images/example.jpg
 hero_alt: "A concise description of the hero image"
 author: "Weaponised Pasts team"
+type: update
 tags:
   - project update
 status: published
+# expires: 2026-12-31
 ---
 ```
 
-The current templates do not use all of these fields yet, but this is the target
-content format for the planned blog improvements.
+The News page and article template use these fields directly. `title`, `date`,
+`summary`, `description`, `author`, `type`, `tags`, and `status` should be
+present. Keep `description` the same as `summary`; the helper does this
+automatically so search and social previews receive the concise text. The hero
+fields are optional, but whenever `hero_image` is supplied, `hero_alt` must also
+describe the image. Supported types are `update`, `news`, `event`, `vacancy`,
+and `publication`. An optional `expires` date displays an **Expired** label after
+that date; it does not delete or hide the article.
 
 Useful Markdown:
 
@@ -161,12 +178,28 @@ and URLs unless a redirect has been planned.
 
 ### Drafts
 
-Jekyll drafts will eventually live in `_drafts/`. Once that folder is introduced,
-preview them with:
+Drafts live in `_drafts/` and do not appear in the ordinary website preview.
+Use **Terminal → Run Task → Website: preview drafts**, or run:
 
 ```powershell
 bundle exec jekyll serve --livereload --drafts
 ```
+
+To publish an approved draft:
+
+1. Change `status: draft` to `status: published`.
+2. Move it from `_drafts/title.md` to
+   `_posts/YYYY-MM-DD-title.md`, using the intended publication date.
+3. Preview both the News page and the complete article.
+4. Review the file with `git diff`, then commit it.
+
+Alternatively, create a publication-ready post from PowerShell with:
+
+```powershell
+.\tools\new-post.ps1 -Title "Project update" -Summary "Short News-page summary." -Type update -Publish
+```
+
+The News page is also available as an Atom feed at `/feed.xml`.
 
 ## Edit styles
 

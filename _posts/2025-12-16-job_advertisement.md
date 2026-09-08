@@ -2,8 +2,16 @@
 layout: post
 title: "Job advertisement - Post-doctoral Research Fellow"
 date: 2025-12-16
-hero_image: /images/places/edinburgh_winter.jpg  # optional
-# summary: "What we’ll publish here and how to follow along."  # optional (used on index)
+summary: "A two-year post-doctoral research opportunity working on experiments and natural language processing for Weaponised Pasts."
+description: "A two-year post-doctoral research opportunity working on experiments and natural language processing for Weaponised Pasts."
+hero_image: /images/places/edinburgh_winter.jpg
+hero_alt: "Edinburgh city centre and castle in winter"
+author: "Weaponised Pasts team"
+type: vacancy
+tags:
+  - opportunity
+  - recruitment
+status: published
 ---
 
 Come and work with us!

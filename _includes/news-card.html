@@ -1,0 +1,30 @@
+{% assign item = include.post %}
+<article class="news-card">
+  {% if item.hero_image %}
+    <a class="news-card__image" href="{{ item.url | relative_url }}" tabindex="-1" aria-hidden="true">
+      <img src="{{ item.hero_image | relative_url }}" alt="" loading="lazy">
+    </a>
+  {% endif %}
+
+  <div class="news-card__body">
+    <p class="news-card__meta">
+      <time datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: "%-d %B %Y" }}</time>
+      {% if item.type %}
+        <span>{{ item.type | replace: "-", " " | capitalize }}</span>
+      {% endif %}
+      {% if item.expires %}
+        {% assign expiry_timestamp = item.expires | date: "%s" | plus: 0 %}
+        {% assign current_timestamp = site.time | date: "%s" | plus: 0 %}
+        {% if expiry_timestamp < current_timestamp %}
+          <span class="status-expired">Expired</span>
+        {% endif %}
+      {% endif %}
+    </p>
+
+    <h2><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h2>
+    <p class="news-card__summary">{{ item.summary | default: item.excerpt | strip_html | normalize_whitespace | truncate: 190 }}</p>
+    <p class="news-card__action">
+      <a class="button alt small" href="{{ item.url | relative_url }}" aria-label="Read {{ item.title }}">Read more</a>
+    </p>
+  </div>
+</article>

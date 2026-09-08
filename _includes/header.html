@@ -1,11 +1,11 @@
 <header id="header">
-  <h1 class="logo">
+  <div class="logo">
     <a href="{{ '/index.html' | relative_url }}" aria-label="Weaponised Pasts home">
       {% unless page.header_logo == false %}
         <img src="{{ '/images/wp_logo_new_close.jpg' | relative_url }}" alt="">
       {% endunless %}
     </a>
-  </h1>
+  </div>
   <nav id="nav" aria-label="Primary navigation">
     <ul>
       {% for item in site.data.navigation %}

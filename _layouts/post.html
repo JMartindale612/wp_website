@@ -2,22 +2,48 @@
 layout: default
 ---
 {% if page.hero_image %}
-<section class="hero">
-  <img class="hero__bg" src="{{ page.hero_image | relative_url }}" alt="">
+<section class="hero post-hero">
+  <img class="hero__bg" src="{{ page.hero_image | relative_url }}" alt="{{ page.hero_alt | default: '' }}">
   <div class="hero__shade"></div>
-  <div class="hero__content"></div>
 </section>
 {% endif %}
 
-<section id="main" class="container">
-  <section class="box post">
-    <header class="major" style="text-align:center">
-      <h2>{{ page.title }}</h2>
-      <p class="date">{{ page.date | date: "%-d %B %Y" }}</p>
+<main id="main" class="container post-main">
+  <article class="box post">
+    <header class="major post-header">
+      <h1>{{ page.title }}</h1>
+      <p class="post-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time>
+        {% if page.author %}<span>By {{ page.author }}</span>{% endif %}
+        {% if page.type %}<span>{{ page.type | replace: "-", " " | capitalize }}</span>{% endif %}
+        {% if page.expires %}
+          {% assign expiry_timestamp = page.expires | date: "%s" | plus: 0 %}
+          {% assign current_timestamp = site.time | date: "%s" | plus: 0 %}
+          {% if expiry_timestamp < current_timestamp %}<span class="status-expired">Expired</span>{% endif %}
+        {% endif %}
+      </p>
     </header>
 
-    <div class="content">
+    <div class="content post-content">
       {{ content }}
     </div>
-  </section>
-</section>
+
+    {% if page.tags.size > 0 %}
+      <ul class="post-tags" aria-label="Article topics">
+        {% for tag in page.tags %}<li>{{ tag }}</li>{% endfor %}
+      </ul>
+    {% endif %}
+
+    <nav class="post-navigation" aria-label="Article navigation">
+      <a class="post-navigation__back" href="{{ '/news/' | relative_url }}">← Back to News</a>
+      <div class="post-navigation__articles">
+        {% if page.previous %}
+          <a rel="prev" href="{{ page.previous.url | relative_url }}">← Older: {{ page.previous.title }}</a>
+        {% endif %}
+        {% if page.next %}
+          <a rel="next" href="{{ page.next.url | relative_url }}">Newer: {{ page.next.title }} →</a>
+        {% endif %}
+      </div>
+    </nav>
+  </article>
+</main>

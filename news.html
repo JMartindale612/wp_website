@@ -2,41 +2,38 @@
 layout: page
 permalink: /news/
 title: News
+description: News, events, opportunities and updates from the Weaponised Pasts project.
 nav_key: news
 ---
 
-<!-- Banner -->
-				<section class="hero">
-					<!-- Background image (blurred via CSS) -->
-					<img class="hero__bg" src="{{ '/images/cheddar_man-natural-history.jpg' | relative_url }}" alt="" aria-hidden="true">
-				
-					<!-- Optional brand tint -->
-					<div class="hero__shade"></div>
-				
-					<!-- Text overlay -->
-					<div class="hero__content">
-					<h1>News</h1>
-					</div>
-				</section>
+<section class="hero">
+  <img class="hero__bg" src="{{ '/images/cheddar_man-natural-history.jpg' | relative_url }}" alt="" aria-hidden="true">
+  <div class="hero__shade"></div>
+  <div class="hero__content">
+    <h1>News</h1>
+  </div>
+</section>
 
-				<!-- Main -->
+<main id="main" class="container news-page">
+  <section class="box special">
+    <header class="major">
+      <h2>News from Weaponised Pasts</h2>
+      <p>Project updates, events, publications and opportunities appear here.</p>
+    </header>
+    <p><a href="{{ '/feed.xml' | relative_url }}">Subscribe to the news feed</a></p>
+  </section>
 
-				<section id="main" class="container">
-					<section class="box special">
-					  <header class="major">
-						<h4>We will be providing regular updates on our progress, and overviews of material that would be interesting for those who would like to follow our work.</h4>
-						<h5>See our latest updates below.</h5>
-					  </header>
-					</section>
-				  
-					<div class="inner post-list">
-						{% assign posts_by_date = site.posts | sort: "date" | reverse %}
-						{% for post in posts_by_date %}
-						  <h3 class="post-list__item">
-							<a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-							<span class="date">— {{ post.date | date: "%-d %B %Y" }}</span>
-						  </h3>
-						  <hr>
-						{% endfor %}
-					  </div>
-				</section>
+  {% if site.posts.size > 0 %}
+    <div class="news-grid">
+      {% assign posts_by_date = site.posts | sort: "date" | reverse %}
+      {% for post in posts_by_date %}
+        {% include news-card.html post=post %}
+      {% endfor %}
+    </div>
+  {% else %}
+    <section class="box news-empty">
+      <h2>No news yet</h2>
+      <p>Please check back for project updates.</p>
+    </section>
+  {% endif %}
+</main>

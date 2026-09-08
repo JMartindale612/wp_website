@@ -10,6 +10,21 @@ markdown: kramdown
 timezone: Europe/London
 excerpt_separator: "<!-- more -->"
 
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+feed:
+  path: feed.xml
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      author: Weaponised Pasts team
+
 sass:
   sass_dir: assets/sass
   style: expanded
@@ -30,4 +45,5 @@ exclude:
   - README
   - README.md
   - LICENSE
+  - templates
   - vendor
