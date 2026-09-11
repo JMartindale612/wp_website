@@ -7,9 +7,7 @@
 (function($) {
 
 	var	$window = $(window),
-		$body = $('body'),
-		$header = $('#header'),
-		$banner = $('#banner');
+		$body = $('body');
 
 	// Breakpoints.
 		breakpoints({
@@ -109,23 +107,5 @@
 					target: $body,
 					visibleClass: 'navPanel-visible'
 				});
-
-	// Header.
-		if (!browser.mobile
-		&&	$header.hasClass('alt')
-		&&	$banner.length > 0) {
-
-			$window.on('load', function() {
-
-				$banner.scrollex({
-					bottom:		$header.outerHeight(),
-					terminate:	function() { $header.removeClass('alt'); },
-					enter:		function() { $header.addClass('alt reveal'); },
-					leave:		function() { $header.removeClass('alt'); }
-				});
-
-			});
-
-		}
 
 })(jQuery);

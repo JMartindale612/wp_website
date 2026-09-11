@@ -1,6 +1,7 @@
 title: Weaponised Pasts
 description: "Research project blog"
 contact_email: jmartind@ed.ac.uk
+logo: /images/icon.jpg
 
 url: "https://weaponisedpasts.org"
 baseurl: ""
@@ -13,6 +14,7 @@ excerpt_separator: "<!-- more -->"
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 feed:
   path: feed.xml
@@ -44,6 +46,5 @@ exclude:
   - Gemfile.lock
   - README
   - README.md
-  - LICENSE
   - templates
   - vendor
