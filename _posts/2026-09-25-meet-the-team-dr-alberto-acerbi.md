@@ -23,19 +23,19 @@ status: published
   <figcaption>Dr Alberto Acerbi presenting a lecture on cultural evolution.</figcaption>
 </figure>
 
-**1. What is your background and area of study?**
+*1. What is your background and area of study?*
 
 I am an Associate Professor in the Department of Sociology and Social Research in the University of Trento, a beautiful town in the middle of the Alps, in Italy. I began my research career with a PhD in anthropology, but from the beginning I had strong interdisciplinary interests. I started to do models of social learning, in fact artificial life and robotics simulations, then I discovered cultural evolution theory. Cultural evolution is a quantitative, naturalistic, and evolutionary approach to the study of cultural dynamics. Differently from the majority of “traditional” socio-cultural anthropologists, we study culture with experiments, models, and data analysis and we think that evolutionary psychology is important to this goal. In the past 10 years, I used this approach to study how digital technologies, especially social media platforms, shape the spread and transformation of ideas.
 
-**2. What is your role in the project, and what expertise do you bring?**
+*2. What is your role in the project, and what expertise do you bring?*
 
 In *Weaponised Pasts*, my role is to guide and integrate the cultural evolution component of the research. I contribute with my theoretical background in cultural evolution, but also with experience in data-intensive approaches to analyse large textual datasets from social media, and in the realisation of transmission chain experiments (a laboratory version of the “telephone game”, where we can understand how information is lost and transformed during different scenarios of cultural transmission).
 
-**3. In your view, what is the value of interdisciplinary research for understanding the emergence of hostility online?**
+*3. In your view, what is the value of interdisciplinary research for understanding the emergence of hostility online?*
 
 Cultural dynamics are simultaneously cognitive, communicative, social, and technological phenomena. No single field can fully capture all the dimensions involved. Understanding online hostility, and specifically how narratives about the past are weaponised, requires bridging disciplinary perspectives. Public archaeology brings insight into how heritage is interpreted and valued; cognitive psychology illuminates individual and collective cognitive tendencies; cultural evolution provides frameworks for how cultural variants spread and transform; computational approaches allow us to analyse real-world data at scale.
 
-**4. What are you hoping that Weaponised Pasts will contribute scientifically and to society?**
+*4. What are you hoping that Weaponised Pasts will contribute scientifically and to society?*
 
 Scientifically, *Weaponised Pasts* offers a novel theoretical and empirical framework for studying how interpretations of heritage can become hostile and diffuse online, integrating experimental and real-world data in a way that has not been done before. I hope the strong theoretical background of the project will prevent simplifications that are seen when studying hostile communication on social media. Social media are not causing them, but one needs to understand the complex dynamics between social media affordances, psychological tendencies, and socio-economical backgrounds. We hope to provide guidance to practitioners and specialists, to support more constructive public discourse, and reduce harms associated with weaponised interpretations of the past, by clarifying the causal mechanisms behind their spread.
 
