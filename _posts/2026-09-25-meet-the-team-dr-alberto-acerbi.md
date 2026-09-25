@@ -4,9 +4,8 @@ title: "Meet the team... Dr Alberto Acerbi"
 date: 2026-09-25
 summary: "Meet Dr Alberto Acerbi, co-investigator on Weaponised Pasts and Associate Professor at the University of Trento."
 description: "Meet Dr Alberto Acerbi, co-investigator on Weaponised Pasts and Associate Professor at the University of Trento."
-hero_image: /images/alberto_pres.jpeg
-hero_alt: "Dr Alberto Acerbi presenting a lecture on cultural evolution"
-hero_fit: contain
+hero_image: /images/trento-banner.png
+hero_alt: "Trento and the surrounding Alps, Italy"
 author: "Weaponised Pasts team"
 type: update
 tags:
@@ -18,6 +17,11 @@ status: published
 *Over the next few weeks we will be publishing a series of interviews with the Weaponised Pasts project team, giving you an insight into their background, areas of interest and their contributions to the project.*
 
 *First up is Dr Alberto Acerbi, whose expertise lies in the study of how culture evolves on social media.*
+
+<figure>
+  <img src="{{ '/images/alberto_pres.jpeg' | relative_url }}" alt="Dr Alberto Acerbi presenting a lecture on cultural evolution">
+  <figcaption>Dr Alberto Acerbi presenting a lecture on cultural evolution.</figcaption>
+</figure>
 
 **1. What is your background and area of study?**
 

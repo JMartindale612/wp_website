@@ -2,7 +2,7 @@
 layout: default
 ---
 {% if page.hero_image %}
-<section class="hero post-hero{% if page.hero_fit == 'contain' %} hero--contain{% endif %}">
+<section class="hero post-hero">
   <img class="hero__bg" src="{{ page.hero_image | relative_url }}" alt="{{ page.hero_alt | default: '' }}">
   <div class="hero__shade"></div>
 </section>
