@@ -57,6 +57,15 @@
 	z-index: 0;
 }
 
+/* Shows a complete artwork within a panoramic post header. */
+.hero--artwork {
+	background: #000;
+
+	.hero__bg {
+		object-fit: contain;
+	}
+}
+
 .hero__shade {
 	display: none !important;
 }
